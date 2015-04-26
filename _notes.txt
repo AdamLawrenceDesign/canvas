@@ -1,0 +1,102 @@
+
+
+//**********************//
+
+Git Commands
+
+git init
+// initialise git
+
+git add . 
+// Get repository ready
+
+git commit -m 'First Commit'
+
+git push
+
+//**********************//
+
+Ways to push the repository
+
+git remote add origin ("remote repository URL")
+// sets the new remote
+
+git remote -v
+// varifies the new remote
+
+git push origin master
+// Pushes the changes in your local repository up to the remote repository
+
+echo # _template >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+
+// Keep on sticking on this part use part b. if doesn't work
+
+git remote add origin https://github.com/AdamLawrenceDesign/_template.git
+git push -u origin master
+
+// Then use git push
+
+###############################
+If this doesn't work try this - the third version uses github instead of origin 
+
+git remote add github git@github.com:AdamLawrenceDesign/'repoName'.git
+
+// this is what I used last night to get things working
+
+git remote set-url origin git@github.com:AdamLawrenceDesign/'repoName'.git
+git remote add github git@github.com:AdamLawrenceDesign/'repoName'.git   
+
+################################
+
+And finally 
+
+git push --set-upstream origin master
+git push
+
+-- End
+
+
+//**************************//
+
+npm install -g grunt-cli
+// install grunt globally 
+
+npm install <module> --save-dev
+// how to install dependencies
+
+npm install grunt-contrib-jshint --save-dev
+
+
+//**************************//
+
+from command line
+
+npm init
+
+
+
+
+
+
+
+SASS
+
+/d 
+SASS watch
+
+C:\xampp\htdocs\sass-test>sass --watch sass\screen.scss:css\screen.css
+
+
+SASS Compress 
+File
+
+C:\xampp\htdocs\sass-test>sass -t compressed sass/screen.scss css/screen.css
+
+
+C:\xampp\htdocs\sass-test>sass -t compass sass\master.scss css\master.css
+
+
+cd /d X:\

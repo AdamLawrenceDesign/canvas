@@ -1,0 +1,31 @@
+{
+  "name": "Createjs",
+  "version": "1.0.0",
+  "description": "Web to print module",
+  "main": "index.html",
+  "dependencies": {
+    "grunt": "^0.4.5"
+  },
+  "devDependencies": {
+    "grunt-contrib-concat": "^0.5.1",
+    "grunt-contrib-cssmin": "^0.12.2",
+    "grunt-contrib-uglify": "^0.9.1",
+    "grunt-contrib-watch": "^0.6.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "adamlawrencedesign"
+  },
+  "keywords": [
+    "web",
+    "print",
+    "canvas",
+    "fabric",
+    "javascript"
+  ],
+  "author": "Adam Lawrence",
+  "license": "ISC"
+}
