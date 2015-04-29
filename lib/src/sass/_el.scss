@@ -290,6 +290,8 @@ header
 	position:fixed;
 	top:0;
 	background:$prm_d;
+	background:#00578a;		/* Orange */
+	background:#292f33;
 	text-align:center!important;
 	width:100%;
 	z-index:110;
@@ -297,11 +299,13 @@ header
 	button 
 	{
 		display:inline-block !important;
-		font-size:.75em;
+		font-size:1em;
 		width:auto;
-		margin-top:-.25em;
+		margin-top:.25em;
+		margin-right: .25em;
 	}
 }
+
 
 main 
 {
@@ -325,7 +329,7 @@ aside
 	position:fixed;
 	z-index:100;
 	left:25%;
-	top:2em;
+	top:3.5em;
 	font-size:1em;
 	li
 	{
@@ -455,7 +459,7 @@ canvas:hover
 	position:fixed;
 	display:inline-block;
 	right: 1em;
-	top: 5em;
+	top: 7em;
 	padding:.25em;
 	background:#3f4652;
 	color:#fff;
@@ -556,7 +560,6 @@ aside a:hover
 {
 	color:#4bc9bd;
 }
-
 /*
 ul#quickLinks li, ul#quickLinks-temp li   
 {
@@ -602,11 +605,8 @@ ul#quickLinks li div[class^="icon-"], ul#quickLinks-temp li div[class^="icon-"]
 		[class^="icon-"]
 		{
 			color:#ccc;
-		};
-		
-		
+		};		
 	} 
-	
 }
 
 .bounce
@@ -676,8 +676,22 @@ ul#quickLinks li div[class^="icon-"], ul#quickLinks-temp li div[class^="icon-"]
 
 /*=======================================*/
 
-@media only screen and (min-width : 20em) 
-{																	/* ===== 20em (320px) Red ====== #testing_phone {display:block}*/
+@media only screen and (min-width : 20em) {																	/* ===== 20em (320px) Red ====== #testing_phone {display:block}*/
+	header 
+	{
+		font-size:.8em;
+		padding:.75em;
+		#header_logo 
+		{ 
+			height:3em
+		};
+		#headerMessage
+		{
+			margin: .75em;
+			float: left;
+		}
+	}
+	/*
 	header 
 	{
 		font-size:.8em;
@@ -694,29 +708,39 @@ ul#quickLinks li div[class^="icon-"], ul#quickLinks-temp li div[class^="icon-"]
 		[class^="icon-"] {font-size:1.8em};
 		.icon-unlocked {font-size:1.6em;padding-bottom:.2em}
 		*/
-	}
+	
 }
 
-@media only screen and (min-width : 48em) 
-{																/* ======= 48em (768px) Green ======= 	#testing_phone {display:none}#testing_tablet {display:block} */
+@media only screen and (min-width : 48em) {																/* ======= 48em (768px) Green ======= 	#testing_phone {display:none}#testing_tablet {display:block} */
 	header 
 	{ 
 		font-size:1em
 	}
 }
 
-@media only screen and (min-width : 56.25em) 
-{																/* ====== 56.25em (900px) dark blue ======= #testing_tablet {display:none}#testing_desktop {display:block}*/
+@media only screen and (min-width : 56.25em) {																/* ====== 56.25em (900px) dark blue ======= #testing_tablet {display:none}#testing_desktop {display:block}*/
+	/*
 	header a, header img 
 	{
 		font-size:1.2em
+	}
+	*/
+	header  
+	{
+		font-size:1.2em;
+		padding: .5em;
+		#headerMessage
+		{
+			margin: .75em;
+		}
 	}
 }
 
-@media only screen and (min-width : 68.75em)
-{																/* ======== 68.75em (1100px) light blue ======== #testing_desktop {display:none}#testing_desktop_lg {display:block } */
+@media only screen and (min-width : 68.75em){																/* ======== 68.75em (1100px) light blue ======== #testing_desktop {display:none}#testing_desktop_lg {display:block } */
+	/*
 	header a, header img 
 	{
 		font-size:1.2em
 	}
+	*/
 }

@@ -1,0 +1,65 @@
+      $.ajax({
+                url: "../AdvAPI/api/UploadFile/" + vUserID + "/List/",
+                username: 'WebAPIPhotocreateUser',
+                password: '@dvw3b@piu$3r',
+                type: "GET",
+                success: function (data) {
+                    $.each(data,
+                        function (index) {
+
+                            var theCachedImage = new Image();
+                            /*Boolean that tells us whether or not the image has finished loading. */
+                            var theBoolean;
+
+                            $(theCachedImage).load(function () {
+                                theBoolean = true;
+                            });
+
+
+                            theCachedImage.id = "rcorners";
+                            theCachedImage.src = data[index].webServerPath;
+                            $('#UploadImage').append(theCachedImage);
+
+                        });
+                    $("#loader").hide("slow");
+                }
+            });
+
+            $('#btnBrowse').bind("click", function () {
+                $('#fileUpload').click();
+
+            });
+
+            $('#fileUpload').change(function () {
+                document.getElementById("fileSelected").value = $('#fileUpload').val().substring(12,$('#fileUpload').val().length);
+            });
+
+
+            $('#btnUploadFile').on('click', function () {
+               
+                var imgData = new FormData();
+                var files = $("#fileUpload").get(0).files;
+
+                // Add the uploaded image content to the form data collection
+                if (files.length > 0) {
+                    imgData.append("ImageUploaded", files[0]);
+                }
+
+                // Make Ajax request with the contentType = false, and procesData = false
+                $.ajax({
+                    type: "POST",
+                    url: "../AdvAPI/api/UploadFile/" + vSubFolder + "/" + vUserID + "/",
+                    username: 'WebAPIPhotocreateUser',
+                    password: '@dvw3b@piu$3r',
+                    contentType: false,
+                    processData: false,
+                    data: imgData,
+                    //Giving message to user on successfull upload
+                    success: function () {
+                        location.reload();                    
+                        alert("Image successfully uploaded!!!");
+                    }          
+                });
+         
+                });
+            });

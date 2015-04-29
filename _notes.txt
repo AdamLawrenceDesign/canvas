@@ -40,23 +40,33 @@ git push -u origin master
 // Then use git push
 
 ###############################
+
 If this doesn't work try this - the third version uses github instead of origin 
 
 git remote add github git@github.com:AdamLawrenceDesign/'repoName'.git
 
-// this is what I used last night to get things working
+// this is what I used last time to get things working
 
 git remote set-url origin git@github.com:AdamLawrenceDesign/'repoName'.git
 git remote add github git@github.com:AdamLawrenceDesign/'repoName'.git   
 
 ################################
 
-And finally 
+// SET REMOTE ORIGIN AFTER ADDING REPO IN GITHUB 
+git remote set-url origin git@github.com:AdamLawrenceDesign/'repoName'.git
 
+// CHECK HOW THE REPO IS SETUP 
+git remote -v
+
+// SET UPSTREAM ORIGIN MASTER
 git push --set-upstream origin master
 git push
 
 -- End
+
+Cloning 
+
+git clone https://github.com/AdamLawrenceDesign/'repoFolderName'
 
 
 //**************************//

@@ -1,0 +1,31 @@
+
+PARSE URL 
+
+//==============================
+
+type= edit, copy
+
+edit = 
+- Save Layout ID
+- When Exported pressed hit use 'PUT' MVC Controller to overwrite current layout ID values 
+
+copy = 
+- Save Layou ID
+- When Exported create new Template with template ID 'POST'
+
+//==============================
+
+type = layoutId
+
+- Get JSON
+- Get Associated layout Id's 
+- load JSON into canvas 
+- Get Associted Product ID's
+
+//==============================
+
+catergories = associated sites
+
+- Query Available images
+
+

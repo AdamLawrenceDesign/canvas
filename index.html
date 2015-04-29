@@ -18,29 +18,31 @@
 
     <script type="text/javascript" src="lib/src/js/slimScroll.js"></script>
     <script type="text/javascript" src="lib/src/js/masonry.pkgd.min.js"></script>
-    <script type="text/javascript" src="lib/src/js/preLoader.js"></script>
+    <script type="text/javascript" src="lib/src/js/image-preloader.js"></script>
+    <script type="text/javascript" src="lib/src/js/image-upload.js"></script>
     <script type="text/javascript" src="lib/src/js/list-builder.js"></script>
     <script type="text/javascript" src="lib/src/js/scroll-manager.js"></script>
     <script type="text/javascript" src="lib/src/js/canvas-setup.js"></script>
     <script type="text/javascript" src="lib/src/js/overlay-builder.js"></script>
     <script type="text/javascript" src="lib/src/js/layout-manager.js"></script>
-    <script type="text/javascript" src="lib/src/js/palette.js"></script>
-    <script type="text/javascript" src="lib/src/js/product.js"></script>
-    <script type="text/javascript" src="lib/src/js/controllers-standard.js"></script>
-    <script type="text/javascript" src="lib/src/js/init-canvas.js"></script>
+    <script type="text/javascript" src="lib/src/js/palette-manager.js"></script>
+    <script type="text/javascript" src="lib/src/js/asset-manager.js"></script>
+    <script type="text/javascript" src="lib/src/js/document-controls.js"></script>
+    <script type="text/javascript" src="lib/src/js/app-init.js"></script>
 
 </head>
 
 <body>
 
-    <header class="prm box-shadow ease_sd p_m p_l_right" style="font-size:1.1em;background:#00578a">
-        <img id="header_logo" class="fl_lt m_m_left" src="svg/logo.svg?v1.1" alt="" />
-        <span class="fl_lt txt_fff m_l_left m_m_top" >
-            <a href="#" class="txt_sm productsLink">Products</a> > 
-            <a href="#" class="txt_sm productLabel"></a> 
+    <header class="prm box-shadow ease_sd">
+        <img id="header_logo" class="fl_lt" src="assets/svg/logo.svg?v1.1" alt="" />
+        <span id="headerMessage" class="fl_lt txt_fff m_l_left m_m_top" >
+            <a href="#" class="txt_sm back">Layouts</a> > 
         </span>
         
-        <button id="export" class="fl_rt button round-sd m_s_top">ADD TO CART<span class="icon-cart m_l_left txt_fff"></span></button>
+        <button class="export fl_rt button round-sd">
+            ADD TO CART <span class="icon-cart m_l_left txt_fff"></span>
+        </button>
         <div class="clearfix"></div>
     </header>   
     
@@ -49,39 +51,45 @@
  
         <div id="wrapAssets" class="clearfix"> <!-- scroll -->
 
-            <div id="assetsShortcuts" class="clearfix align_lt">
+            <div id="assetsShortcuts" class="clearfix align_lt p_l_top">
+                <!-- 
                 <div class="bg_fa p_m round-sd">
-                <img src="" id="profileImage" class="fl_lt round-sd" alt="profile image" style="width:3em"/>
-                <br/>
-                <b><span id="name" class="txt_xs m_l_left m_l_top"></span></b>
-                <span id="mail" class="txt_xs m_l_left"></span>
+                    <img src="" id="profileImage" class="fl_lt round-sd" alt="profile image" style="width:3em"/>
+                    <br/>
+                    <b><span id="name" class="txt_xs m_l_left m_l_top"></span></b>
+                    <span id="mail" class="txt_xs m_l_left"></span>
                 </div>
-            
-            
+                -->
                 <h4 class="m_l_top">Product Information</h4>
                 <div class="underline-solid"></div>
                 <div id="productInformation" class="clearfix">
                     <p>
                         <img class="fl_rt productImage" src="" alt="" style="width:6em;"/> 
                         <span class="description"></span><br/>
-                        <a href="#" class="txt_sm productsLink"><span class="itemName"></span></a><br/>
+                        <a href="#" class="txt_sm back"><span class="itemName"></span></a><br/>
                         <span class="txt_red price"></span>
                     </p>
                     <div class="clearfix" style="height:1em"></div>
-                    <span class="txt_xs">QTY&nbsp;</span>
-                    <span class="input_area_select border_ntl round_sd relative inline_block txt_xs">
-                        <select id="qty" style="width:4em">
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                        </select>
-                        <label class="icon-arrow-down2 border_box" style="color:#333"></label>
+
+                    <span class="productQty">
+                        <span class="txt_xs">QTY&nbsp;</span>
+                        <span class="input_area_select border_ntl round_sd relative inline_block txt_xs">
+                            <select id="qty" style="width:4em">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                            </select>
+                            <label class="icon-arrow-down2 border_box" style="color:#333"></label>
+                        </span>
                     </span>
-                 
-                    <button id="export" class="_50_m fl_rt button round-sd txt_xs">ADD TO CART<span class="icon-cart m_l_left txt_fff"></span></button>
+
+                    <button class="export _50_m fl_rt button round-sd txt_xs">
+                        ADD TO CART <span class="icon-cart m_l_left txt_fff"></span>                       
+                    </button>
                    
+                   <div class="clearfix"></div>
                    <div class="underline-solid m_l_top"></div>
                    
                    <ul id="orientationLinks">
@@ -98,30 +106,44 @@
                     </ul>
                    
                    <div class="underline-solid m_l_top"></div>
-                                    
-                    <!-- 
-                    <p class="_50_m">
-                        <span class="description"></span><br/>
-                        <a href="#" class="txt_sm productsLink"><span class="itemName"></span></a><br/>
-                        <span class="txt_red price"></span><br/><br/>
-                        <span class="txt_xs">QTY&nbsp;</span>
-                        <span class="input_area_select border_ntl round_sd relative inline_block txt_xs">
-                            <select id="qty" style="width:4em">
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                            </select>
-                            <label class="icon-arrow-down2 border_box" style="color:#333"></label>
-                        </span>
-                        <button id="export" class="fl_rt button round-sd m_l_top txt_xs">ADD TO CART<span class="icon-cart m_l_left txt_fff"></span></button>
-                    </p>
-                    <img class="_50_m p_m_top" src="" alt="" />
-                    <!-- <a href="#" class="txt_sm productsLink">< Back</a> -->
+                                
                 </div>
                 <div class="align_ct">
+                    <input id="hide" type="button" class="btn btn-primary" value="-"  title="Hide"/>
+                    <input id="show" type="button" class="btn btn-primary" value="UPLOAD IMAGE +" title="Show"/>
+                    <!-- 
                     <button class="button inline_block open_next_xtr m_l_top round-sd txt_xs p_l_left p_l_right" style="cursor:pointer;width:auto;">UPLOAD IMAGE<span class="icon-camera2 m_l_left txt_fff"></span></button>
+                    -->
+                    <div id="divUploads">
+                        <div id="uploadContent">
+                            <div>
+                                <label for="subFolder" />
+                                SubFolder: <input type="text" id="subFolder" onchange="SetDefault($(this).val());" onkeyup="this.onchange();"  oninput="this.onchange();" aria-label=" left align" readonly="readonly" />
+                            </div>
+
+                            <div>
+                                <label for="userID" />
+                                UserID: <input type="text" id="userID" onchange="SetDefault($(this).val());" onkeyup="this.onchange();" oninput="this.onchange();" aria-label="Left Align" readonly="readonly" />
+                            </div>
+                            <div>
+                                <button id="btnBrowse" class="btn btn-primary">Browse File</button>
+                                <input type="text" id="fileSelected" disabled="disabled" />
+                                <input id="fileUpload" type="file" /><br /><br />
+                                <input id="btnUploadFile" type="button" value="Upload File" class="btn btn-primary" aria-label="Right Align" data-toggle="tooltip" />
+                            </div>
+                            <br />
+                            <div class="grid_8 omega">
+                                <img id="loader" src="../AdvAPI/Images/ajax-loader.gif" />
+                            </div>
+
+                        <div id="imageDiv">
+                            <div id="UploadImage">
+
+                            </div>
+                        </div>
+                      </div>
+                    </div>
+                    
                 </div>
                 <div class="quickLinks">
                 
@@ -434,7 +456,7 @@
     
     <div id="screenChange" class="fixed_max middle linear hidden">
         <div class="absolute_vert_center inline" style="height:5em;">
-            <img src="assests/img/loader_grey.gif" alt="" />
+            <img src="assets/img/loading.gif" alt="" style="height:2em" />
             <h2 class="txt_sm m_m_top">PLEASE WAIT...</h2>
         </div>
     </div>
