@@ -1,31 +1,153 @@
 
-PARSE URL 
+ROAD MAP
 
-//==============================
-
-type= edit, copy
-
-edit = 
-- Save Layout ID
-- When Exported pressed hit use 'PUT' MVC Controller to overwrite current layout ID values 
-
-copy = 
-- Save Layou ID
-- When Exported create new Template with template ID 'POST'
-
-//==============================
-
-type = layoutId
-
-- Get JSON
-- Get Associated layout Id's 
-- load JSON into canvas 
-- Get Associted Product ID's
-
-//==============================
-
-catergories = associated sites
-
-- Query Available images
+1. QUERY THE LAYOUTS TABLE SEE HOW MANY PAGES ARE NEEDED 
+2. CHECK THE FIRST JSON ENTRY TO SEE IF PAGES ARE PORTRAIT OR LANDSCAPE
+3. PAGES VARIABLE UPDATED 
+4. CANVAS CONTAINER BUILT (MULTI PAGE INCLUDED)
+5. IF MULIT PAGE START THE PAGNATION 
+6. PRODUCTDATA VARIABLE UPDATED - SERVER QUERIED THIS INCLUDES COST ETC
+7. CHECK FOR OVERLAYS - UPDATE CROPMARKS VARIABLE
+8. START THE CANVAS 
+9. ADD JSON TO CANVAS
+10. ADD CROP MARKS IF NEEDED
+11. START THE EVENT MANAGER TO LISTEN FOR WINDOW CHANGE
+12. LOAD ASSETS // ASIDE CONTENT TEXT THEMES AND IMAGES + PRODUCT INFO
+13. INITALISE THE SLIM SCROLL 
+14. ADD EVENT LISTENERS TO CANVAS SO ITEMS CAN BE ADDED TO CANVAS
+15. START UP THE PALETTE CONTROLS
 
 
+
+/*************************************
+
+	CREATJS DOCUMENT NOTES 
+
+/*************************************
+
+OVERVIEW PROCEEDURES 
+
+DATA SOURCES
+
+> PARSE URL 
+	- Guest ID
+	- Subfolder 
+	- webpage 
+	- user 
+	- type copy/edit/purchase 
+	- productId
+	- layoutId
+
+> TIME STAMP
+
+> PRODUCT INFO
+	- description
+	- groupName
+	- itemName
+	- fHeightMM, fwidthMM, heightMM, widthMM
+	- costCode
+	- id
+	- numberOfPages
+	- unitPrice
+
+> LAYOUT INFO
+	- jsonID
+	- webLayout
+	- pageNumber 
+	- weblayout
+
+> JSON INFO
+	- json
+	- pageNumber 
+	- userID
+	- webLayoutID
+	- webOrderItemID
+
+DATA MAP
+
+> User 
+	.id
+	.folder
+	.name
+	.timestamp
+
+> Website 
+	.layoutManager
+	.communitySchool
+	.communitySports
+    .communityPortalWeekendSports
+    .advancedyouSchool
+    .advancedyouSports
+    .advacendyouFamily
+
+> Product 
+	.general
+		.price
+		.imagePreview
+		.catergory
+	.sizes
+		.crop
+		.orientation
+		.size - handle jpg sizes if under size eg < 100kb
+	.layouts
+		.pageNumber
+		.pages = []
+		.json 
+
+THE STACK
+
+> JQUERY
+> FABRIC
+> SLIM-SCROLL
+> MASONRY
+> IMAGE PRELOADER
+> IMAGE UPLOADER
+> ELEMENT-BUILDER
+> SCROLL-MANAGER
+> GRID-MANAGER 
+> RESIZE-MANAGER
+> DOCUMENT-CONTROLS
+> ADD-TO-CANVAS
+> CANVAS-SETUP
+> BUILDER-FUNCTION
+
+PROCEEDURES 
+
+> APP INITIALIZE
+
+> CANVAS SETUP
+	- document
+	- this.product.sizes
+	- this.product.pageNumber
+	- window.resize
+	- canvas parser
+
+> GRID-MANAGER 
+	- $(canvas).resize // use the same 
+
+> RESIZE-MANAGER
+	- window
+	- canvas
+
+> ASSET-MANAGER
+	- user
+	- website
+	- load assets
+
+> DOCUMENT CONTROLS
+	- website
+	- user 
+	- export()
+
+> ELEMENT BUILDER 
+	- user.images()
+	- website.images()		 // Generic Images should be a part of this
+	- product.layouts()
+	- generic.text()
+
+> EVENT-MANAGER
+	- load json()
+	- drop and drag images()
+	- add text()
+	- track current canvas()
+	- save CANVAS edit
