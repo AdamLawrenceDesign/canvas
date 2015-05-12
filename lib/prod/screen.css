@@ -914,26 +914,26 @@ div[id^="assets"] {
   right: 0;
   border: 1px dashed #ddd; }
 
-/*
-#cropTest
-{
-	width: 100%;
-	height: 100%;
-	background: rgba(255,255,255, .4);
-	-webkit-clip-path: rect(5% 11% 15% 10%);
-	clip-path: rect(5% 11% 15% 10%);
-	-webkit-clip: rect(10px  10px  120px 100px);
-	clip: rect(10px  10px  120px 100px);
-}
-*/
-/*
-.canvas-transitions
-{
-  -webkit-transition: all .5s;
-  -moz-transition: all .5s;
-  transition: all .5s;
-}
-*/
+#warning-message-wrap {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 200;
+  background: rgba(255, 255, 255, 0.8);
+  display: none; }
+  #warning-message-wrap #warning-message {
+    height: 200px;
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0; }
+    #warning-message-wrap #warning-message .button {
+      width: 10em; }
+
 #zoom {
   position: absolute;
   bottom: 2em;

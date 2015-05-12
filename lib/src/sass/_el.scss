@@ -514,26 +514,32 @@ div[id^="assets"]
 	border: 1px dashed #ddd;
 }
 
-/*
-#cropTest
+#warning-message-wrap 
 {
-	width: 100%;
-	height: 100%;
-	background: rgba(255,255,255, .4);
-	-webkit-clip-path: rect(5% 11% 15% 10%);
-	clip-path: rect(5% 11% 15% 10%);
-	-webkit-clip: rect(10px  10px  120px 100px);
-	clip: rect(10px  10px  120px 100px);
+	position: absolute;
+	left:0;
+	top:0;
+	width:100%;
+	height:100%;
+	z-index: 200;
+	background: rgba(255,255,255, .8);
+	display:none;
+	#warning-message
+	{
+		height:200px;
+		position:absolute;
+		margin: auto;
+		left:0;
+		right:0;
+		top:0;
+		bottom:0;
+		.button
+		{
+			width:10em;
+		}
+	}
 }
-*/
-/*
-.canvas-transitions
-{
-  -webkit-transition: all .5s;
-  -moz-transition: all .5s;
-  transition: all .5s;
-}
-*/
+
 #zoom 
 {
 	position:absolute;
