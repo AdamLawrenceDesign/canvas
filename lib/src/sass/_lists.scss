@@ -117,12 +117,12 @@ ul#listImages
 }
 */
 
-#listImages li, #listImages li a, #listThemes li, #listThemes li a 
+#listImages li, #listImages li a, #listThemes li, #listThemes li a,  #uploadedImages li, #uploadedImages li a, #uploadedImages li, #uploadedImages li a
 {
 	height:auto
 }
 
-ul#listImages, ul#listTextThemes, ul#listThemes 
+ul#listImages, ul#listTextThemes, ul#listThemes, ul#uploadedImages, ul#uploadedImages, ul#uploadedImages, 
 {
 	text-align:justify;
 	li

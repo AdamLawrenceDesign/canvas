@@ -86,10 +86,10 @@
                         ADD TO CART <span class="icon-cart m_l_left txt_fff"></span>                       
                     </button>
                    
-                   <div class="clearfix"></div>
-                   <div class="underline-solid m_l_top"></div>
+                    <div class="clearfix"></div>
+                    <div class="underline-solid m_l_top"></div>
                    
-                   <ul id="orientationLinks">
+                    <ul id="orientationLinks">
                         <li>
                         <a href="#" id="portrait" class="clearfix m_l_top txt_sm">
                             Portrait<span class="icon-checkmark fl_rt hidden" style="color:#4bc9bd;"></span>
@@ -105,48 +105,30 @@
                    <div class="underline-solid m_l_top"></div>
                 </div>
 
-                <div class="align_ct">
-                    <input id="hide" type="button" class="btn btn-primary" value="-"  title="Hide"/>
-                    <input id="show" type="button" class="btn btn-primary" value="+" title="Show"/>
+                <div id="uploadImages" class="align_ct p_l_top">
 
-                    <div id="divUploads">
-                        <div id="uploadContent">
+                    <div id="uploadContent">
 
-                            <div class="hidden">
-                                <label for="subFolder" />
-                                SubFolder: <input type="text" id="subFolder" onchange="SetDefault($(this).val());" onkeyup="this.onchange();"  oninput="this.onchange();" aria-label=" left align" readonly="readonly" />
-                            </div>
+                        <input id="fileUpload" type="file" />
+                        <input type="text" id="fileSelected" disabled="disabled" class="hidden" /><br /><br />
+                        <input id="btnUploadFile" type="button" value="Upload File" class="btn btn-primary" aria-label="Right Align" data-toggle="tooltip" /><br /><br />
+                    </div>
 
-                            <div class="hidden">
-                                <label for="userID" />
-                                UserID: <input type="text" id="userID" onchange="SetDefault($(this).val());" onkeyup="this.onchange();" oninput="this.onchange();" aria-label="Left Align" readonly="readonly" />
-                            </div>
-
-                            <div class="clearfix"></div>
-                            
-                            <button id="btnBrowse" class="btn btn-primary button inline_block open_next_xtr m_l_top round-sd p_l_left p_l_right">
-                                Browse File
-                            </button>
-
-                            <span class="input_area m_l_top fl_rt txt_sm">
-                                <input type="text" id="fileSelected" disabled="disabled" />
-                            </span>
-                            
-                            <input id="fileUpload" type="file" /><br /><br />
-                            <input id="btnUploadFile" type="button" value="Upload File" class="btn btn-primary" aria-label="Right Align" data-toggle="tooltip" />
-
-                        </div>
-
-                        <br />
-                        <div class="grid_8 omega">
-                            <img id="loader" src="../AdvAPI/Images/ajax-loader.gif" />
-                        </div>
-
-                        <div id="imageDiv">
-                            <div id="UploadImage">
-                            </div>
+                    <br />
+                    <!--
+                    <div class="grid_8 omega">
+                        <img id="loader" src="../AdvAPI/Images/ajax-loader.gif" />
+                    </div>
+                    -->
+                    <!--
+                    <div id="imageDiv">
+                        <div id="UploadImage">
                         </div>
                     </div>
+                    -->
+                    <ul id="uploadedImages" class="clearfix relative halfs">
+                    </ul>
+                
                 </div>
 
                 <div class="quickLinks">
@@ -178,6 +160,7 @@
             </div>
             
             <div id="assetsImages" class="clearfix">
+
                 <ul id="listImages" class="clearfix relative halfs">
                 </ul>
                 
@@ -446,49 +429,23 @@ $(function()
 
     /***************************************************/
     //   PARSE URL 
-    
-    website = window.location.href.slice(window.location.href.search('webpage=')+8, window.location.href.search('%user')-1);
-    user = window.location.href.slice(window.location.href.search('user=')+5, window.location.href.search('%type')-1);
-    type = window.location.href.slice(window.location.href.search('type=')+5, window.location.href.search('%productId')-1);
-    productId = window.location.href.slice(window.location.href.search('productId=')+10, window.location.href.search('%layoutId')-1);
-    layoutId = window.location.href.slice(window.location.href.search('layoutId=')+9, window.location.href.length).replace('#','').replace('?','');
 
+    website = window.location.href.slice(window.location.href.search('webpage=')+8, window.location.href.search('userId')-2);
+    userId = window.location.href.slice(window.location.href.search('userId=')+7, window.location.href.search('userName')-2);
+    userName = window.location.href.slice(window.location.href.search('userName=')+9, window.location.href.search('type')-2);
+    type = window.location.href.slice(window.location.href.search('type=')+5, window.location.href.search('productId')-2);
+    productId = window.location.href.slice(window.location.href.search('productId=')+10, window.location.href.search('layoutId')-2);
+    layoutId = window.location.href.slice(window.location.href.search('layoutId=')+9, window.location.href.search('end')-1);
+    
     $('#wrapAssets').css('height', window.innerHeight - ($('header').height()+60) + 'px');  // removed $('#wrapSearch').height()*3)
     $('main').css('height', window.innerHeight - ($('header').height()+10) + 'px');
-    
-    appInitialise = new AppInit(user, website, type, productId, layoutId);
+
+    appInitialise = new AppInit(userId, userName, website, type, productId, layoutId);
+
 });
 
 </script>
 
-<!-- 
-            <li>
-                <a id="nav-page-down" href="#" class="clearfix">
-                    <span class="icon-arrow-up"></span>
-                </a>
-            </li>
-            <li class="selected">
-                <a id="nav-page-0"  href="#" class="clearfix">
-                    <p>1</p>
-                </a>
-            </li>   
-            <li>
-                <a id="nav-page-1" href="#" class="clearfix">
-                    <p>2</p>
-                </a>
-            </li>                                           
-            
-            <li>
-                <a id="nav-page-2"  href="#" class="clearfix">
-                    <p>3</p>
-                </a>
-            </li>       
-            <li>
-                <a id="nav-page-up"  href="#" class="clearfix">
-                    <span class="icon-arrow-down2"></span>
-                </a>
-            </li>  
--->
     
 </body>
 </html>
