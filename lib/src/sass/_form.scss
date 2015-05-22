@@ -5,7 +5,8 @@ input[type="text"], textarea, select, button
 {													/* ========= global  ========= */
 	position:relative;
 	/*-webkit-appearance: none;			Removed for now  */
-	width:100%;
+	width:auto;
+	display: inline-block;
 	font-weight:300;
 	@extend .border_box;
 	padding:.5em;
@@ -229,6 +230,53 @@ button::-moz-focus-inner, select::-moz-focus-inner
   border: 0;
 }
 
+#wrap-upload
+{
+	min-height:3em;	
+	margin-top: 1em;
+	#upload-file
+	{
+		postion:absolute;
+		top:0;
+		left:0;
+		width:100%;
+		opacity:0;
+		cursor: pointer;
+	};
+	#upload-display
+	{
+		position:absolute;
+		top:0;
+		right:0;
+		-webkit-border-radius: 0 4px 4px 0;
+		-moz-border-radius: 0 4px 4px 0;
+		border-radius: 0 4px 4px 0;
+		text-indent:.5em;
+		width: 76%;
+	};
+	#upload-button
+	{
+		position: absolute;
+		top:0;
+		left:0;
+		-webkit-border-radius: 4px 0 0 4px;
+		-moz-border-radius:4px 0 0 4px;
+		border-radius:4px 0 0 4px;
+		width: 25%;
+		backround:$blue;
+		border:1px solid $blue;
+	};
+};
+
+.btn-orange
+{
+	background:$orange;
+}
+
+.btn-orange:hover
+{
+	background: #ef842d;
+}
 
 @media only screen and (min-width : 20em) {						/* ===== 20em (320px) Red ====== */
 }

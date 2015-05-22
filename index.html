@@ -41,11 +41,11 @@
 
     <header class="prm box-shadow ease_sd">
         <img id="header_logo" class="fl_lt" src="assets/svg/logo.svg?v1.1" alt="" />
-        <span id="headerMessage" class="fl_lt txt_fff m_l_left m_m_top" >
+        <span id="headerMessage" class="fl_lt txt-fff m_l_left m_m_top" >
             <a href="#" class="txt_sm back">Layouts</a> > 
         </span>
         <button class="export fl_rt button round-sd">
-            ADD TO CART <span class="icon-cart m_l_left txt_fff"></span>
+            ADD TO CART <span class="icon-cart m_l_left txt-fff"></span>
         </button>
         <div class="clearfix"></div>
     </header>   
@@ -83,7 +83,7 @@
                     </span>
 
                     <button class="export _50_m fl_rt button round-sd txt_xs">
-                        ADD TO CART <span class="icon-cart m_l_left txt_fff"></span>                       
+                        ADD TO CART <span class="icon-cart m_l_left txt-fff"></span>                       
                     </button>
                    
                     <div class="clearfix"></div>
@@ -105,35 +105,28 @@
                    <div class="underline-solid m_l_top"></div>
                 </div>
 
-                <div id="uploadImages" class="align_ct p_l_top">
+                <div id="uploadImages" class="align_ct p_m_top clearfix">
+                    <h4 class="align_lt">Upload Image/s</h4>
+                    <div id="wrap-upload" class="relative clearfix">
+                        <input id="upload-display" type="text" disabled="disabled"></input>
+                        <button id="upload-button" class="button txt_sm">Browse</button>
+                        <input id="upload-file" type="file" />
+                        <div class="clearfix"></div>
+                    </div> 
+                    
+                    <!--<input type="text" id= disabled="disabled" class="hidden" /> -->
+                    <button id="upload-init" type="button" class="button btn-orange round txt_sm round-sd txt_sm" data-toggle="tooltip">
+                        <span class="icon-plus m_m_right txt-fff round"></span>Add Image
+                    </button>
 
-                    <div id="uploadContent">
-
-                        <input id="fileUpload" type="file" />
-                        <input type="text" id="fileSelected" disabled="disabled" class="hidden" /><br /><br />
-                        <input id="btnUploadFile" type="button" value="Upload File" class="btn btn-primary" aria-label="Right Align" data-toggle="tooltip" /><br /><br />
-                    </div>
-
-                    <br />
-                    <!--
-                    <div class="grid_8 omega">
-                        <img id="loader" src="../AdvAPI/Images/ajax-loader.gif" />
-                    </div>
-                    -->
-                    <!--
-                    <div id="imageDiv">
-                        <div id="UploadImage">
-                        </div>
-                    </div>
-                    -->
-                    <ul id="uploadedImages" class="clearfix relative halfs">
+                    <ul id="uploadedImages" class="clearfix relative halfs m_l_top">
                     </ul>
                 
                 </div>
 
                 <div class="quickLinks">
                 
-                    <h4 class="align_ct">Add Image/s</h4>
+                    <h4 class="align_ct">More Image/s</h4>
                     
                     <a href="#" class="clearfix" data-link="Images" style="margin-top:2em">
                         <span class="icon-arrow-down"></span>
@@ -422,14 +415,11 @@
 <script type="text/javascript">
 
 // INITIALISE THE CANVAS APP
-
 $(function()
 {
     var appInitialise, website, user, type, productId, layoutId, pages;
 
-    /***************************************************/
-    //   PARSE URL 
-
+    //  PARSE URL 
     website = window.location.href.slice(window.location.href.search('webpage=')+8, window.location.href.search('userId')-2);
     userId = window.location.href.slice(window.location.href.search('userId=')+7, window.location.href.search('userName')-2);
     userName = window.location.href.slice(window.location.href.search('userName=')+9, window.location.href.search('type')-2);

@@ -238,7 +238,7 @@ blockquote p {
 .txt_ntl_m {
   color: #66757f !important; }
 
-.txt_fff {
+.txt-fff {
   color: #fff !important; }
 
 .txt_shadow_dk {
@@ -1161,7 +1161,8 @@ input[type="text"], textarea, select, button {
   /* ========= global  ========= */
   position: relative;
   /*-webkit-appearance: none;			Removed for now  */
-  width: 100%;
+  width: auto;
+  display: inline-block;
   font-weight: 300;
   padding: .5em;
   font-size: 1em;
@@ -1341,6 +1342,42 @@ textarea {
 
 button::-moz-focus-inner, select::-moz-focus-inner {
   border: 0; }
+
+#wrap-upload {
+  min-height: 3em;
+  margin-top: 1em; }
+  #wrap-upload #upload-file {
+    postion: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    opacity: 0;
+    cursor: pointer; }
+  #wrap-upload #upload-display {
+    position: absolute;
+    top: 0;
+    right: 0;
+    -webkit-border-radius: 0 4px 4px 0;
+    -moz-border-radius: 0 4px 4px 0;
+    border-radius: 0 4px 4px 0;
+    text-indent: .5em;
+    width: 76%; }
+  #wrap-upload #upload-button {
+    position: absolute;
+    top: 0;
+    left: 0;
+    -webkit-border-radius: 4px 0 0 4px;
+    -moz-border-radius: 4px 0 0 4px;
+    border-radius: 4px 0 0 4px;
+    width: 25%;
+    backround: #00B3C8;
+    border: 1px solid #00B3C8; }
+
+.btn-orange {
+  background: #ffa45a; }
+
+.btn-orange:hover {
+  background: #ef842d; }
 
 @media only screen and (min-width: 20em) {
   /* ===== 20em (320px) Red ====== */ }
