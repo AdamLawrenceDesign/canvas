@@ -409,7 +409,8 @@
         layoutData = [],
         cropMarks = [],
         currentPageRef = '0',
-        todaysDate = '';
+        todaysDate = '', 
+        userId, id1, id2, id3, firstName, lastName;
 </script>
 
 <script type="text/javascript">
@@ -421,19 +422,41 @@ $(function()
 
     //  PARSE URL 
     website = window.location.href.slice(window.location.href.search('webpage=')+8, window.location.href.search('userId')-2);
+    // GUEST ID 
+    userId = window.location.href.slice(window.location.href.search('userId=')+7, window.location.href.search('id1')-2);
+    id1 = window.location.href.slice(window.location.href.search('id1=')+4, window.location.href.search('id2')-2);
+    id2 = window.location.href.slice(window.location.href.search('id2=')+4, window.location.href.search('id3')-2);
+    id3 = window.location.href.slice(window.location.href.search('id3=')+4, window.location.href.search('firstName')-2);
+    firstName =  window.location.href.slice(window.location.href.search('firstName=')+4, window.location.href.search('lastName')-2);
+    lastName =  window.location.href.slice(window.location.href.search('lastName=')+4, window.location.href.search('type')-2);
+    type = window.location.href.slice(window.location.href.search('type=')+5, window.location.href.search('productId')-2);
+    productId = window.location.href.slice(window.location.href.search('productId=')+10, window.location.href.search('layoutId')-2);
+    layoutId = window.location.href.slice(window.location.href.search('layoutId=')+9, window.location.href.search('end')-1);
+
+    userInfo = {
+                    'userId': userId,
+                    'id1': id1,
+                    'id2': id2,
+                    'id3': id3,
+                    'firstName': firstName,
+                    'lastName': lastName
+                };
+
+    $('#wrapAssets').css('height', window.innerHeight - ($('header').height()+60) + 'px');  // removed $('#wrapSearch').height()*3)
+    $('main').css('height', window.innerHeight - ($('header').height()+10) + 'px');
+
+    appInitialise = new AppInit(userInfo, website, type, productId, layoutId);
+
+});
+
+/*
+    website = window.location.href.slice(window.location.href.search('webpage=')+8, window.location.href.search('userId')-2);
     userId = window.location.href.slice(window.location.href.search('userId=')+7, window.location.href.search('userName')-2);
     userName = window.location.href.slice(window.location.href.search('userName=')+9, window.location.href.search('type')-2);
     type = window.location.href.slice(window.location.href.search('type=')+5, window.location.href.search('productId')-2);
     productId = window.location.href.slice(window.location.href.search('productId=')+10, window.location.href.search('layoutId')-2);
     layoutId = window.location.href.slice(window.location.href.search('layoutId=')+9, window.location.href.search('end')-1);
-    
-    $('#wrapAssets').css('height', window.innerHeight - ($('header').height()+60) + 'px');  // removed $('#wrapSearch').height()*3)
-    $('main').css('height', window.innerHeight - ($('header').height()+10) + 'px');
-
-    appInitialise = new AppInit(userId, userName, website, type, productId, layoutId);
-
-});
-
+*/
 </script>
 
     
