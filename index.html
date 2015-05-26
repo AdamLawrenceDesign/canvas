@@ -3,6 +3,8 @@
 <head>
 
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+
     <title>Gift Items | Canvas</title>
     
     <link rel="shortcut icon" href="img/logo.png">
@@ -50,42 +52,43 @@
         <div class="clearfix"></div>
     </header>   
     
-    <aside class="_25_s relative p_l_top">
-        <p></p>
+    <aside class="clearfix">
  
         <div id="wrapAssets" class="clearfix"> <!-- scroll -->
 
             <div id="assetsShortcuts" class="clearfix align_lt p_l_top">
-                <h3>Layout Builder</h3>
+                <h3>Gift Items</h3>
                 <h4>Product Information</h4>
                 <div class="underline-solid"></div>
                 <div id="productInformation" class="clearfix">
                     <p>
-                        <img class="fl_rt productImage" src="" alt="" style="width:6em;"/> 
+                        <img class="fl_rt productImage" src="" alt="" /> 
                         <span class="description"></span><br/>
                         <a href="#" class="txt_sm back"><span class="itemName"></span></a><br/>
                         <span class="txt_red price"></span>
                     </p>
-                    <div class="clearfix" style="height:1em"></div>
 
-                    <span class="productQty">
-                        <span class="txt_xs">QTY&nbsp;</span>
-                        <span class="input_area_select border_ntl round_sd relative inline_block txt_xs">
-                            <select id="qty" style="width:4em">
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                            </select>
-                            <label class="icon-arrow-down2 border_box" style="color:#333"></label>
-                        </span>
-                    </span>
+                    <div class="clearfix"></div>
 
-                    <button class="export _50_m fl_rt button round-sd txt_xs">
-                        ADD TO CART <span class="icon-cart m_l_left txt-fff"></span>                       
-                    </button>
-                   
+                    <div class="clearfix m_m_top" style="min-height:1em">
+                        <div class="productQty">
+                            <span class="txt_xs">QTY&nbsp;</span>
+                            <span class="input_area_select border_ntl round_sd relative inline_block txt_xs">
+                                <select id="qty" style="width:4em">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
+                                <label class="icon-arrow-down2 border_box" style="color:#333"></label>
+                            </span>
+                        </div>
+                        <button id="export-aside" class="export _50_m button round-sd txt_xs">
+                            ADD TO CART <span class="icon-cart m_l_left txt-fff"></span>                       
+                        </button>
+                    </div>
+
                     <div class="clearfix"></div>
                     <div class="underline-solid m_l_top"></div>
                    
@@ -124,8 +127,7 @@
                 
                 </div>
 
-                <div class="quickLinks">
-                
+                <div class="quickLinks p_l_bottom clearfix">
                     <h4 class="align_ct">More Image/s</h4>
                     
                     <a href="#" class="clearfix" data-link="Images" style="margin-top:2em">
@@ -223,7 +225,7 @@
         <div class="clearfix"></div>
     </aside>
         
-    <main id="main-wrap" class="_75_m relative clearfix">
+    <main id="main-wrap" class="clearfix">
     
         <ul id="tabs" class="m_l_top">
         
@@ -389,18 +391,31 @@
     </div>
     
     <div id="warning-message-wrap">
-        <div id="warning-message" class="_50_m">
+        <div id="warning-message" class="_50_m p_l txt_sm">
             <h3>Warning</h3>
-            <p>Changing the orientations of your canvas will may give you unexpected results with the content of you canvas</p>
+            <!-- <p>Changing the orientations of your canvas will may give you unexpected results with the content of you canvas</p> -->
+            <p>We are sorry your screen is to small to use our editing platform. Please try again on a larger device.</p>
+            <div class="p_m align_ct">
+                <button class="button round-sd txt_sm back" style="background:#ffa45a;display:inline-block">BACK</button>
+            </div>     
+            <!-- 
             <div class="p_m _50_s">
                 <button id="warning-cancel" class="button round-sd txt_sm fl_rt" style="background:#ffa45a">CANCEL</button>
             </div>            
             <div class="p_m _50_s">
                 <button id="warning-proceed"  class="button round-sd txt_sm fl_lt">PROCEED</button>
             </div>
+            -->
         </div>
     </div>
-    <div id="fb-root" class="hidden"></div>
+
+    <div class="hidden">
+        <div id="testing_phone"></div>
+        <div id="testing_tablet"></div>
+        <div id="testing_desktop"></div>
+        <div id="testing_desktop_lg"></div>
+    </div>
+
 
 <script type="text/javascript"> 
     var pages = [],  
@@ -443,6 +458,7 @@ $(function()
 
     $('#wrapAssets').css('height', window.innerHeight - ($('header').height()+60) + 'px');  // removed $('#wrapSearch').height()*3)
     $('main').css('height', window.innerHeight - ($('header').height()+10) + 'px');
+    $('aside').css('height', window.innerHeight - ($('header').height()+10) + 'px');
 
     appInitialise = new AppInit(userInfo, website, type, productId, layoutId);
 });

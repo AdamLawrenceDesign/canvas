@@ -1,3 +1,4 @@
+
 .ease-sd {
 	 -webkit-transition: all $ease-sd ease-in-out;
 	-moz-transition: all $ease-sd ease-in-out;
@@ -127,58 +128,7 @@
 	cursor: pointer;
 }
 
-/*
-.jspHorizontalBar .jspTrack,
-.jspHorizontalBar .jspDrag
-{
-	float: left;
-	height: 100%;
-}
-
-.jspArrow
-{
-	background: #50506d;
-	text-indent: -20000px;
-	display: block;
-	cursor: pointer;
-	padding: 0;
-	margin: 0;
-}
-
-.jspArrow.jspDisabled
-{
-	cursor: default;
-	background: #80808d;
-}
-
-.jspVerticalBar .jspArrow
-{
-	height: 16px;
-}
-
-.jspHorizontalBar .jspArrow
-{
-	width: 16px;
-	float: left;
-	height: 100%;
-}
-
-.jspVerticalBar .jspArrow:focus
-{
-	outline: none;
-}
-
-.jspCorner
-{
-	background: #eeeef4;
-	float: left;
-	height: 100%;
-}
-*/
-
-.jspHorizontalBar,
-.jspVerticalBar,
-.jspTrack
+.jspHorizontalBar, .jspVerticalBar, .jspTrack
 {
 	background: #fff;
 }
@@ -198,64 +148,73 @@
 	transition: opacity $ease-sd ease-in-out;
 }
 
-.jspTrack .jspActive,
-.jspTrack .jspHover,
-.jspDrag:hover
+.jspTrack .jspActive, .jspTrack .jspHover, .jspDrag:hover
 {
 	background: #ccc;
 }
 
-/*
-.jspArrow
+.bounce
 {
-	background: url(../image/ui-icons_222222_256x240.png) no-repeat;
-	-moz-border-radius: 10px;
-	-webkit-border-radius: 10px;
-	border-radius: 10px;
+	-webkit-animation: bounce 1200ms ease;
+	-moz-animation: bounce 1200ms ease;
+	-o-animation: bounce 1200ms ease;
+	animation: bounce 1200ms ease;
 }
 
-.jspVerticalBar>.jspActive,
-.jspArrow:hover
+/* Bounce Key Frames */
+@-webkit-keyframes bounce
 {
-	background-image: url('../image/ui-icons_cd0a0a_256x240.png');
+  0% {
+	-webkit-transform:translateY(0);
+  }
+  25% {
+	-webkit-transform:translateY(100%);
+  }
+  50% {
+	-webkit-transform:translateY(0);
+  }
+  75% {
+	-webkit-transform:translateY(50%);
+  }
+  100% {
+	-webkit-transform:translateY(0);
+  }
 }
 
-.jspVerticalBar>.jspDisabled,
-.jspVerticalBar>.jspDisabled:hover,
-.jspHorizontalBar>.jspDisabled,
-.jspHorizontalBar>.jspDisabled:hover
+@-moz-keyframes bounce
 {
-	background-color: transparent;
-	background-image: url('../image/ui-icons_888888_256x240.png');
+  0% {
+	-moz-transform:translateY(0);
+  }
+  25% {
+	-moz-transform:translateY(100%);
+  }
+  50% {
+	-moz-transform:translateY(0);
+  }
+  75% {
+	-moz-transform:translateY(50%);
+  }
+  100% {
+	-moz-transform:translateY(0);
+  }
 }
 
-.jspVerticalBar .jspArrow
+@keyframes bounce 
 {
-	height: 15px;
+  0% {
+    transform:translateY(0);
+  }
+  25% {
+    transform:translateY(100%);
+  }
+  50% {
+    transform:translateY(0%);
+  }
+  75% {
+    transform:translateY(50%);
+  }
+  100% {
+    transform:translateY(0%);
+  }
 }
-
-.jspHorizontalBar .jspArrow
-{
-	width: 15px;
-}
-
-.jspArrowUp
-{
-	background-position: 0 0;
-}
-
-.jspArrowDown
-{
-	background-position: -64px 0 !important; 
-}
-
-.jspArrowLeft
-{
-	background-position: -96px 0 !important;
-}
-
-.jspArrowRight
-{
-	background-position: -32px 0 !important;
-}
-*/

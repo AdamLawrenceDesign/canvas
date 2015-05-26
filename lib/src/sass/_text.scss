@@ -85,3 +85,76 @@ blockquote p
 .txt-emboss_d {
     text-shadow:$ntl_m 1px 1px 0;
 }
+
+
+/* RED 320px  */
+
+@media only screen and (min-width : 20em) {																	
+	
+	h1 { font-size:1.4em }
+	h2 { font-size: 1.2em}
+	h3 { font-size: 1.18em }
+	h4 { font-size: 1.08em }	
+
+}
+
+/*  GREEN 768px  */
+
+@media only screen and (min-width : 48em) {																
+	
+	h1 {
+		font-size:1.4em;
+		line-height: 1.4 
+	}
+		
+	h2 {
+		font-size: 1.2em;
+		line-height: 1.4em;
+		margin: 0 0 .2em 0 
+	}
+	
+	h3 {
+		font-size: 1.2em;
+		line-height: 1.4em;
+		margin: .2em 0 .2em 0 }
+	
+	h4 {
+		font-size: .9em;
+		line-height: 1em;
+		margin:.25em 0 }	
+
+}
+
+/* DARK BLUE 900px */
+
+@media only screen and (min-width : 56.25em) {																
+	h1 {
+		font-size:2.2em;
+		margin-top:.2em;
+		line-height: 1.4 }
+		
+	h2 {
+		font-size: 1.68em;
+		line-height: 1.7em;
+		margin: 0 0 .2em 0 }
+	
+	h3 {
+		font-size: 1.38em;
+		line-height: 1.7em;
+		margin: .4em 0 .2em 0 }
+	
+	h4 {
+		font-size: 1.18em;
+		line-height: 1.2em;
+		margin:.5em 0 }		
+
+}
+
+/* LIGHT BLUE 1100px  */
+
+@media only screen and (min-width : 68.75em){																
+	
+
+}
+	
+
