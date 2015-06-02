@@ -1,42 +1,13 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
-
     <title>Gift Items | Canvas</title>
-    
     <link rel="shortcut icon" href="img/logo.png">
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,500,500italic|Open+Sans:400,300,700,600,300italic' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="lib/prod/screen.css?v1.1" />
     <link rel="stylesheet" href="lib/prod/create_fonts.css?v1.1" />
-    
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js" type="text/javascript"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.0/jquery-ui.min.js" type="text/javascript"></script>
-    <script type="text/javascript" src="lib/fabric/fabric.min.js"></script>
-    <!-- <script type="text/javascript" src="js/lib/create.min.js?v1.1"></script> -->
-
-    <script type="text/javascript" src="lib/src/js/slimScroll.js"></script>
-    <script type="text/javascript" src="lib/src/js/masonry.pkgd.min.js"></script>
-    <script type="text/javascript" src="lib/src/js/image-preloader.js"></script>
-    <script type="text/javascript" src="lib/src/js/image-upload.js"></script>
-    <script type="text/javascript" src="lib/src/js/pagnation.js"></script>
-    <script type="text/javascript" src="lib/src/js/list-builder.js"></script>
-    <script type="text/javascript" src="lib/src/js/element-builder.js"></script>
-    <!-- <script type="text/javascript" src="lib/src/js/layout-manager.js"></script> -->
-    <script type="text/javascript" src="lib/src/js/scroll-manager.js"></script>
-    <script type="text/javascript" src="lib/src/js/export-json.js"></script>
-    <script type="text/javascript" src="lib/src/js/rotate-canvas.js"></script>
-    <script type="text/javascript" src="lib/src/js/palette-manager.js"></script>
-    <script type="text/javascript" src="lib/src/js/canvas-addItems.js"></script>
-    <script type="text/javascript" src="lib/src/js/load-assets.js"></script>
-    <script type="text/javascript" src="lib/src/js/canvas-grid.js"></script>
-    <script type="text/javascript" src="lib/src/js/event-manager.js"></script>
-    <script type="text/javascript" src="lib/src/js/insert-json.js"></script>
-    <script type="text/javascript" src="lib/src/js/canvas-setup.js"></script>
-    <script type="text/javascript" src="lib/src/js/app-init.js"></script>
-
 </head>
 
 <body>
@@ -415,7 +386,32 @@
         <div id="testing_desktop"></div>
         <div id="testing_desktop_lg"></div>
     </div>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js" type="text/javascript"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.0/jquery-ui.min.js" type="text/javascript"></script>
+    <script type="text/javascript" src="lib/fabric/fabric.min.js"></script>
+    <!-- <script type="text/javascript" src="js/lib/create.min.js?v1.1"></script> -->
 
+<script type="text/javascript" src="lib/src/js/slimScroll.js"></script>
+<script type="text/javascript" src="lib/src/js/masonry.pkgd.min.js"></script>
+<script type="text/javascript" src="lib/src/js/image-preloader.js"></script>
+<script type="text/javascript" src="lib/src/js/server-query.js"></script>
+<script type="text/javascript" src="lib/src/js/image-upload.js"></script>
+<script type="text/javascript" src="lib/src/js/pagnation.js"></script>
+<script type="text/javascript" src="lib/src/js/list-builder.js"></script>
+<script type="text/javascript" src="lib/src/js/element-builder.js"></script>
+<!-- <script type="text/javascript" src="lib/src/js/layout-manager.js"></script> -->
+<script type="text/javascript" src="lib/src/js/scroll-manager.js"></script>
+<script type="text/javascript" src="lib/src/js/export-json.js"></script>
+<script type="text/javascript" src="lib/src/js/rotate-canvas.js"></script>
+<script type="text/javascript" src="lib/src/js/palette-manager.js"></script>
+<script type="text/javascript" src="lib/src/js/canvas-addItems.js"></script>
+<script type="text/javascript" src="lib/src/js/load-assets.js"></script>
+<script type="text/javascript" src="lib/src/js/canvas-grid.js"></script>
+<script type="text/javascript" src="lib/src/js/event-manager.js"></script>
+<script type="text/javascript" src="lib/src/js/insert-json.js"></script>
+<script type="text/javascript" src="lib/src/js/canvas-setup.js"></script>
+<script type="text/javascript" src="lib/src/js/app-init.js"></script>
 
 <script type="text/javascript"> 
     var pages = [],  
@@ -432,21 +428,22 @@
 // INITIALISE THE CANVAS APP
 $(function()
 {
-    var appInitialise, website, user, type, productId, layoutId, pages;
-
+    var appInitialise, website, user, type, productId, layoutId, jsonId, pages;
     //  PARSE URL 
-    website = window.location.href.slice(window.location.href.search('webpage=')+8, window.location.href.search('userId')-2);
+    website = window.location.href.slice(window.location.href.search('webpage=')+8, window.location.href.search('&userId'));
     // GUEST ID 
-    userId = window.location.href.slice(window.location.href.search('userId=')+7, window.location.href.search('id1')-2);
-    id1 = window.location.href.slice(window.location.href.search('id1=')+4, window.location.href.search('id2')-2);
-    id2 = window.location.href.slice(window.location.href.search('id2=')+4, window.location.href.search('id3')-2);
-    id3 = window.location.href.slice(window.location.href.search('id3=')+4, window.location.href.search('firstName')-2);
-    firstName =  window.location.href.slice(window.location.href.search('firstName=')+4, window.location.href.search('lastName')-2);
-    lastName =  window.location.href.slice(window.location.href.search('lastName=')+4, window.location.href.search('type')-2);
-    type = window.location.href.slice(window.location.href.search('type=')+5, window.location.href.search('productId')-2);
-    productId = window.location.href.slice(window.location.href.search('productId=')+10, window.location.href.search('layoutId')-2);
-    layoutId = window.location.href.slice(window.location.href.search('layoutId=')+9, window.location.href.search('end')-1);
-
+    userId = window.location.href.slice(window.location.href.search('userId=')+7, window.location.href.search('&userName'));
+    id1 = window.location.href.slice(window.location.href.search('id1=')+4, window.location.href.search('&id2'));
+    id2 = window.location.href.slice(window.location.href.search('id2=')+4, window.location.href.search('&id3'));
+    id3 = window.location.href.slice(window.location.href.search('id3=')+4, window.location.href.search('&firstName'));
+    firstName =  window.location.href.slice(window.location.href.search('firstName=')+10, window.location.href.search('&lastName'));
+    lastName =  window.location.href.slice(window.location.href.search('lastName=')+9, window.location.href.search('&type'));
+    type = window.location.href.slice(window.location.href.search('type=')+5, window.location.href.search('&productId'));
+    productId = window.location.href.slice(window.location.href.search('productId=')+10, window.location.href.search('&layoutId'));
+    layoutId = window.location.href.slice(window.location.href.search('layoutId=')+9, window.location.href.search('&jsonId'));
+    jsonId = window.location.href.slice(window.location.href.search('jsonId=')+7, window.location.href.search('&end')); 
+    
+    // JSON ID = 
     userInfo = {
                     'userId': userId,
                     'id1': id1,
@@ -460,11 +457,10 @@ $(function()
     $('main').css('height', window.innerHeight - ($('header').height()+10) + 'px');
     $('aside').css('height', window.innerHeight - ($('header').height()+10) + 'px');
 
-    appInitialise = new AppInit(userInfo, website, type, productId, layoutId);
+    appInitialise = new AppInit(userInfo, website, type, productId, layoutId, jsonId);
 });
 
 </script>
-
     
 </body>
 </html>
