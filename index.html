@@ -15,7 +15,7 @@
     <header class="prm box-shadow ease_sd">
         <img id="header_logo" class="fl_lt" src="assets/svg/logo.svg?v1.1" alt="" />
         <span id="headerMessage" class="fl_lt txt-fff m_l_left m_m_top" >
-            <a href="#" class="txt_sm back">Layouts</a> > 
+            <a href="#" class="txt_sm back">Back to Layouts</a> > 
         </span>
         <button class="export fl_rt button round-sd">
             ADD TO CART <span class="icon-cart m_l_left txt-fff"></span>
@@ -55,7 +55,7 @@
                                 <label class="icon-arrow-down2 border_box" style="color:#333"></label>
                             </span>
                         </div>
-                        <button id="export-aside" class="export _50_m button round-sd txt_xs">
+                        <button id="export-aside" class="export _50_m button btn-orange round-sd txt_xs">
                             ADD TO CART <span class="icon-cart m_l_left txt-fff"></span>                       
                         </button>
                     </div>
@@ -396,6 +396,7 @@
 <script type="text/javascript" src="lib/src/js/masonry.pkgd.min.js"></script>
 <script type="text/javascript" src="lib/src/js/image-preloader.js"></script>
 <script type="text/javascript" src="lib/src/js/server-query.js"></script>
+<script type="text/javascript" src="lib/src/js/page-style.js"></script>
 <script type="text/javascript" src="lib/src/js/image-upload.js"></script>
 <script type="text/javascript" src="lib/src/js/pagnation.js"></script>
 <script type="text/javascript" src="lib/src/js/list-builder.js"></script>
@@ -410,6 +411,7 @@
 <script type="text/javascript" src="lib/src/js/canvas-grid.js"></script>
 <script type="text/javascript" src="lib/src/js/event-manager.js"></script>
 <script type="text/javascript" src="lib/src/js/insert-json.js"></script>
+<script type="text/javascript" src="lib/src/js/search-and-replace.js"></script>
 <script type="text/javascript" src="lib/src/js/canvas-setup.js"></script>
 <script type="text/javascript" src="lib/src/js/app-init.js"></script>
 
@@ -429,6 +431,7 @@
 $(function()
 {
     var appInitialise, website, user, type, productId, layoutId, jsonId, pages;
+
     //  PARSE URL 
     website = window.location.href.slice(window.location.href.search('webpage=')+8, window.location.href.search('&userId'));
     // GUEST ID 
@@ -442,8 +445,6 @@ $(function()
     productId = window.location.href.slice(window.location.href.search('productId=')+10, window.location.href.search('&layoutId'));
     layoutId = window.location.href.slice(window.location.href.search('layoutId=')+9, window.location.href.search('&jsonId'));
     jsonId = window.location.href.slice(window.location.href.search('jsonId=')+7, window.location.href.search('&end')); 
-    
-    console.log('firstName: ', firstName)
 
     // JSON ID = 
     userInfo = {
@@ -458,6 +459,8 @@ $(function()
     $('#wrapAssets').css('height', window.innerHeight - ($('header').height()+60) + 'px');  // removed $('#wrapSearch').height()*3)
     $('main').css('height', window.innerHeight - ($('header').height()+10) + 'px');
     $('aside').css('height', window.innerHeight - ($('header').height()+10) + 'px');
+    console.log('sizes set ');
+
 
     appInitialise = new AppInit(userInfo, website, type, productId, layoutId, jsonId);
 });

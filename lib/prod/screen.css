@@ -544,13 +544,14 @@ img.border {
   width: 100%;
   height: 100%;
   content: " ";
-  background: url(../img/bg_overlay.png);
+  background: url(../../assets/img/bg_overlay.png);
   background-size: 14em;
   opacity: .3;
-  pointer-events: none; }
+  pointer-events: none;
+  z-index: -1; }
 
 .pattern_sports:before {
-  background: url("../img/sports/bg_overlay.png") repeat scroll 0 0/14em auto transparent;
+  background: url("../../assets/img/sports/bg_overlay.png") repeat scroll 0 0/14em auto transparent;
   position: absolute;
   top: 0; }
 
@@ -636,6 +637,7 @@ main {
   display: inline-block;
   padding: 1em 1em 2em 1em;
   overflow: hidden;
+  height: 95%;
   -webkit-transition: all 100ms ease-in-out;
   -moz-transition: all 100ms ease-in-out;
   -ms-transition: all 100ms ease-in-out;
@@ -661,6 +663,7 @@ aside {
   position: relative;
   float: left;
   display: inline-block;
+  height: 80%;
   background: #fff;
   height: auto;
   z-index: 100;
@@ -722,6 +725,7 @@ div[id^="assets"] {
   padding: 0 1em 1em 1em; }
 
 #wrapAssets {
+  height: 80%;
   overflow: hidden !important;
   padding-bottom: 2em; }
 
@@ -1172,10 +1176,13 @@ textarea {
 
 .button_lt:hover, .button:hover {
   /*background:#73b64a;*/
-  background: #6caddf;
+  /* background:#6caddf; */
   /* blue */
-  background: #30BFB1;
-  background: #4BC3C9; }
+  /* background:#30BFB1;
+  background:#4BC3C9; */
+  -webkit-box-shadow: inset 9px 11px 16px -14px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: inset 9px 11px 16px -14px rgba(0, 0, 0, 0.75);
+  box-shadow: inset 9px 11px 16px -14px rgba(0, 0, 0, 0.75); }
 
 .button_ntl, .pagnation li a {
   color: #fff;
@@ -1234,9 +1241,12 @@ button::-moz-focus-inner, select::-moz-focus-inner {
 .btn-orange {
   background: #ffa45a; }
 
-.btn-orange:hover {
-  background: #ef842d; }
-
+/*
+.btn-orange:hover
+{
+	background: #ef842d;
+}
+*/
 @media only screen and (min-width: 20em) {
   /* ===== 20em (320px) Red ====== */ }
 @media only screen and (min-width: 48em) {
@@ -1800,7 +1810,7 @@ button::-moz-focus-inner, select::-moz-focus-inner {
 .icon-uniE688:before {
   content: "\e688"; }
 
-.ease-sd, .wrap-canvas figure#canvas-shadow, #palette, #palette li ul, .quickLinks a span, .button_lt, .button_dk, .button_sd, .button, ul.assetList img, ul#listSize img {
+.ease-sd, .wrap-canvas figure#canvas-shadow, #palette, #palette li ul, .quickLinks a span, .button_lt, .button_dk, .button_sd, .button, ul.assetList img, ul.assetList li img, ul#listSize img {
   -webkit-transition: all 0.5s ease-in-out;
   -moz-transition: all 0.5s ease-in-out;
   -o-transition: all 0.5s ease-in-out;

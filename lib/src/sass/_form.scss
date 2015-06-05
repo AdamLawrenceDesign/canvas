@@ -193,9 +193,12 @@ textarea
 .button_lt:hover, .button:hover
 {
 	/*background:#73b64a;*/
-	background:#6caddf;		/* blue */
-	background:#30BFB1;
-	background:#4BC3C9;
+	/* background:#6caddf; */		/* blue */
+	/* background:#30BFB1;
+	background:#4BC3C9; */
+	-webkit-box-shadow: inset 9px 11px 16px -14px rgba(0,0,0,0.75);
+	-moz-box-shadow: inset 9px 11px 16px -14px rgba(0,0,0,0.75);
+	box-shadow: inset 9px 11px 16px -14px rgba(0,0,0,0.75);
 }
 
 .button_ntl, .pagnation li a
@@ -274,12 +277,12 @@ button::-moz-focus-inner, select::-moz-focus-inner
 {
 	background:$orange;
 }
-
+/*
 .btn-orange:hover
 {
 	background: #ef842d;
 }
-
+*/
 @media only screen and (min-width : 20em) {						/* ===== 20em (320px) Red ====== */
 }
 

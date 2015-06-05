@@ -46,6 +46,7 @@ main
 	display: inline-block;
 	padding:1em 1em 2em 1em;
 	overflow:hidden;
+	height: 95%;
 	-webkit-transition: all 100ms ease-in-out;
     -moz-transition: all 100ms ease-in-out;
     -ms-transition: all 100ms ease-in-out;
@@ -74,6 +75,7 @@ aside
 	position: relative;
 	float:left;
 	display: inline-block;
+	height:80%;
 	background:#fff;
 	height:auto;
 	z-index: 100;
@@ -176,6 +178,7 @@ div[id^="assets"]
 
 #wrapAssets 
 {
+	height:80%;
 	overflow: hidden !important;
 	padding-bottom:2em;
 }

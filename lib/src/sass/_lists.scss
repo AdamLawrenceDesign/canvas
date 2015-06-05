@@ -59,6 +59,11 @@ ul.assetList
 	};
 }
 
+ul.assetList li img
+{
+	@extend .ease-sd;	
+}
+
 ul.assetList li:hover
 {
 	img
