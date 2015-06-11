@@ -65,9 +65,22 @@ input[type="text"]:focus, textarea:focus, select:focus
 	background:#fff;
 	outline-width:0;
 }
+	
+.input_area_select label 
+{
+	position:absolute;
+	top:0;
+	right:0;
+	height:100%;
+	width:2.1em;
+	padding-top:.6em;
+	pointer-events:none;
+	background:#f9f9f9
+}
 
 select:focus 
 {
+	background:#f9f9f9;
 	label
 	{
 		background:#fff
@@ -84,18 +97,7 @@ select
 	appearance:none;
 	text-overflow: "";  															/*Removes default arrow from firefox*/ /*My custom style for fonts*/
 }
-	
-.input_area_select label 
-{
-	position:absolute;
-	top:0;
-	right:0;
-	height:100%;
-	width:2.1em;
-	padding-top:.6em;
-	pointer-events:none;
-	background:#f9f9f9
-}
+
 
 label
 {
@@ -277,6 +279,10 @@ button::-moz-focus-inner, select::-moz-focus-inner
 {
 	background:$orange;
 }
+
+
+
+
 /*
 .btn-orange:hover
 {

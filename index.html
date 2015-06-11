@@ -8,6 +8,14 @@
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,500,500italic|Open+Sans:400,300,700,600,300italic' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="lib/prod/screen.css?v1.1" />
     <link rel="stylesheet" href="lib/prod/create_fonts.css?v1.1" />
+
+    <style>
+        select:focus 
+        {
+            background: #f9f9f9;
+        }
+    </style>
+
 </head>
 
 <body>
@@ -109,7 +117,7 @@
                 <div class="clearfix"></div>
             </div>
 
-            <div id="assetsThemes" class="clearfix hidden">
+            <div id="assetsThemes" class="clearfix hidden relative">
 
                 <ul id="listThemes" class="clearfix inline">
                 </ul>
@@ -123,19 +131,25 @@
                         <span class="icon-arrow-down"></span>
                     </a>
                 </div>
+
             </div>
             
             <div id="assetsImages" class="clearfix">
+
+                <span class="input_area_select border_ntl round-sd relative _100 clearfix m_l_bottom">
+                    <select id="select-categories" class="_100">
+                        <option>Select Category</option>
+                    </select>
+                    <!-- <label class="icon-arrow-down border_box" style="backgroud:#000"></label> -->
+                </span> 
 
                 <ul id="listImages" class="clearfix relative halfs">
                 </ul>
                 
                 <div class="clearfix"></div>
                 
-                <div class="underline-arrow m_l_top m_l_bottom"></div>
-                
-                <button class="button inline_block open_next_xtr m_l_top round-sd" style="cursor:pointer">UPLOAD IMAGE</button>
-                
+                <!-- <div class="underline-arrow m_l_top m_l_bottom"></div> -->
+                               
                 <div class="clearfix"></div>
                 
                 <div class="quickLinks">
@@ -435,7 +449,7 @@ $(function()
     //  PARSE URL 
     website = window.location.href.slice(window.location.href.search('webpage=')+8, window.location.href.search('&userId'));
     // GUEST ID 
-    userId = window.location.href.slice(window.location.href.search('userId=')+7, window.location.href.search('&userName'));
+    userId = window.location.href.slice(window.location.href.search('userId=')+7, window.location.href.search('&userName')).replace(/#/g,'');
     id1 = window.location.href.slice(window.location.href.search('id1=')+4, window.location.href.search('&id2'));
     id2 = window.location.href.slice(window.location.href.search('id2=')+4, window.location.href.search('&id3'));
     id3 = window.location.href.slice(window.location.href.search('id3=')+4, window.location.href.search('&firstName'));
