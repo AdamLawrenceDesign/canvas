@@ -88,6 +88,7 @@
                 </div>
 
                 <div id="uploadImages" class="align_ct p_m_top clearfix">
+
                     <h4 class="align_lt">Upload Image/s</h4>
                     <div id="wrap-upload" class="relative clearfix">
                         <input id="upload-display" type="text" disabled="disabled"></input>
@@ -101,9 +102,8 @@
                         <span class="icon-plus m_m_right txt-fff round"></span>Add Image
                     </button>
 
-                    <ul id="uploadedImages" class="clearfix relative halfs m_l_top">
+                    <ul id="uploadedImages" class="clearfix relative m_l_top">
                     </ul>
-                
                 </div>
 
                 <div class="quickLinks p_l_bottom clearfix">
@@ -116,34 +116,9 @@
 
                 <div class="clearfix"></div>
             </div>
-
-            <div id="assetsThemes" class="clearfix hidden relative">
-
-                <ul id="listThemes" class="clearfix inline">
-                </ul>
-                
-                <div class="clearfix m_l_right align_ct pagnation button_wrp m_l_top"></div>
-
-                <div class="clearfix"></div>
-                
-                <div class="quickLinks">
-                    <a href="#" class="clearfix" data-link="Images">
-                        <span class="icon-arrow-down"></span>
-                    </a>
-                </div>
-
-            </div>
             
             <div id="assetsImages" class="clearfix">
-
-                <span class="input_area_select border_ntl round-sd relative _100 clearfix m_l_bottom">
-                    <select id="select-categories" class="_100">
-                        <option>Select Category</option>
-                    </select>
-                    <!-- <label class="icon-arrow-down border_box" style="backgroud:#000"></label> -->
-                </span> 
-
-                <ul id="listImages" class="clearfix relative halfs">
+                <ul id="listImages" class="clearfix relative">
                 </ul>
                 
                 <div class="clearfix"></div>
@@ -160,8 +135,25 @@
                 
                 <div class="clearfix" style="height:3em;"></div>              
             </div>
+
+            <div id="assetsArtwork" class="clearfix hidden relative">
+
+                <ul id="listThemes" class="clearfix inline">
+                </ul>
+                
+                <div class="clearfix m_l_right align_ct pagnation button_wrp m_l_top"></div>
+
+                <div class="clearfix"></div>
+                
+                <div class="quickLinks">
+                    <a href="#" class="clearfix" data-link="Images">
+                        <span class="icon-arrow-down"></span>
+                    </a>
+                </div>
+            </div>
             
             <div id="assetsText" class="clearfix">
+
 
                 <div class="m_l_bottom bg_fa clearfix p_l_top p_l_bottom">
                 
@@ -177,7 +169,7 @@
                 
                 <p class="txt_sm">TEXT STICKERS</p>
                 
-                <ul id="listTextThemes" class="m_l_top relative thirds">
+                <ul id="listTextThemes" class="m_l_top relative">
                 </ul>
                 
                 <div class="clearfix"></div>
@@ -187,7 +179,6 @@
                         <span class="icon-arrow-up"></span>
                     </a>
                 </div>
-                
             </div>
             <!--
             <div id="assetsSize" class="clearfix">
@@ -420,7 +411,8 @@
 <script type="text/javascript" src="lib/src/js/export-json.js"></script>
 <script type="text/javascript" src="lib/src/js/rotate-canvas.js"></script>
 <script type="text/javascript" src="lib/src/js/palette-manager.js"></script>
-<script type="text/javascript" src="lib/src/js/canvas-addItems.js"></script>
+<script type="text/javascript" src="lib/src/js/canvas-add-images.js"></script>
+<script type="text/javascript" src="lib/src/js/canvas-add-textItems.js"></script>
 <script type="text/javascript" src="lib/src/js/load-assets.js"></script>
 <script type="text/javascript" src="lib/src/js/canvas-grid.js"></script>
 <script type="text/javascript" src="lib/src/js/event-manager.js"></script>
@@ -436,7 +428,7 @@
         cropMarks = [],
         currentPageRef = '0',
         todaysDate = '', 
-        userId, id1, id2, id3, firstName, lastName;
+        userId, id1, id2, id3, firstName, lastName, firstPortraitImgPath, firstGroupImgPath, firstFamilyImgPath, logoPath;
 </script>
 
 <script type="text/javascript">

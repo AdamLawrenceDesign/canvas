@@ -323,7 +323,7 @@ img.border {
   border: 1px solid #ecedf0; }
 
 /* ======== Style Patterns ======== */
-.box-shadow, #palette, #palette li ul, ul.assetList li:hover img, ul#listSize li:hover img {
+.box-shadow, #palette, #palette li ul, ul#listSize li:hover img {
   /* ==== shadow remove later ==== */
   -webkit-box-shadow: 0px 0px 6px 0px rgba(50, 50, 50, 0.75);
   -moz-box-shadow: 0px 0px 6px 0px rgba(50, 50, 50, 0.75);
@@ -1066,8 +1066,20 @@ input[type="text"]:focus, textarea:focus, select:focus {
   background: #fff;
   outline-width: 0; }
 
-select:focus label {
-  background: #fff; }
+.input_area_select label {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 2.1em;
+  padding-top: .6em;
+  pointer-events: none;
+  background: #f9f9f9; }
+
+select:focus {
+  background: #f9f9f9; }
+  select:focus label {
+    background: #fff; }
 
 select {
   position: relative;
@@ -1081,16 +1093,6 @@ select {
   text-overflow: "";
   /*Removes default arrow from firefox*/
   /*My custom style for fonts*/ }
-
-.input_area_select label {
-  position: absolute;
-  top: 0;
-  right: 0;
-  height: 100%;
-  width: 2.1em;
-  padding-top: .6em;
-  pointer-events: none;
-  background: #f9f9f9; }
 
 label {
   text-align: left; }
@@ -1810,7 +1812,7 @@ button::-moz-focus-inner, select::-moz-focus-inner {
 .icon-uniE688:before {
   content: "\e688"; }
 
-.ease-sd, .wrap-canvas figure#canvas-shadow, #palette, #palette li ul, .quickLinks a span, .button_lt, .button_dk, .button_sd, .button, ul.assetList img, ul.assetList li img, ul#listSize img {
+.ease-sd, .wrap-canvas figure#canvas-shadow, #palette, #palette li ul, .quickLinks a span, .button_lt, .button_dk, .button_sd, .button, ul.assetList img, ul#listSize img {
   -webkit-transition: all 0.5s ease-in-out;
   -moz-transition: all 0.5s ease-in-out;
   -o-transition: all 0.5s ease-in-out;
@@ -2018,6 +2020,20 @@ ul.assetList li {
 ul.assetList img {
   border: 4px solid #eaeaea; }
 
+/*
+ul.assetList li img
+{
+	@extend .ease-sd;	
+}
+
+ul.assetList li:hover
+{
+	img
+	{
+		@extend .box-shadow;
+	};
+}
+*/
 ul#listSize {
   padding-top: 0; }
   ul#listSize li {
@@ -2026,35 +2042,26 @@ ul#listSize {
 #listImages li, #listImages li a, #listThemes li, #listThemes li a, #uploadedImages li, #uploadedImages li a, #uploadedImages li, #uploadedImages li a {
   height: auto; }
 
-ul#listImages, ul#listTextThemes, ul#listThemes, ul#uploadedImages, ul#uploadedImages, ul#uploadedImages {
-  text-align: justify; }
-  ul#listImages li, ul#listTextThemes li, ul#listThemes li, ul#uploadedImages li, ul#uploadedImages li, ul#uploadedImages li {
-    width: 100%;
-    padding-bottom: 1%; }
-  ul#listImages li img, ul#listTextThemes li img, ul#listThemes li img, ul#uploadedImages li img, ul#uploadedImages li img, ul#uploadedImages li img {
+ul#listImages, ul#stockImages, ul#listTextThemes, ul#listThemes, ul#uploadedImages, ul#uploadedImages, ul#uploadedImages {
+  margin-left: -1%; }
+  ul#listImages li, ul#stockImages li, ul#listTextThemes li, ul#listThemes li, ul#uploadedImages li, ul#uploadedImages li, ul#uploadedImages li {
+    padding-left: 1%;
+    padding-bottom: 1%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    display: inline-block;
+    float: left; }
+  ul#listImages li img, ul#stockImages li img, ul#listTextThemes li img, ul#listThemes li img, ul#uploadedImages li img, ul#uploadedImages li img, ul#uploadedImages li img {
     width: 100%;
     height: auto; }
+
+.img-col-50 {
+  width: 49%; }
 
 /* RED 320px  */
 /*  GREEN 768px  */
 /* DARK BLUE 900px */
 /* LIGHT BLUE 1100px  */
-@media only screen and (min-width: 68.75em) {
-  ul#listImages, ul#listTextThemes, ul#listThemes, ul#uploadedImages, ul#uploadedImages, ul#uploadedImages {
-    text-align: justify; }
-    ul#listImages li, ul#listTextThemes li, ul#listThemes li, ul#uploadedImages li, ul#uploadedImages li, ul#uploadedImages li {
-      width: 48%;
-      padding: 1%; }
-    ul#listImages li img, ul#listTextThemes li img, ul#listThemes li img, ul#uploadedImages li img, ul#uploadedImages li img, ul#uploadedImages li img {
-      width: 100%;
-      height: auto;
-      -webkit-transition: all .5 ease-in-out;
-      -moz-transition: all .5 ease-in-out;
-      -o-transition: all .5 ease-in-out;
-      transition: all .5 ease-in-out; }
-    ul#listImages li:hover img, ul#listTextThemes li:hover img, ul#listThemes li:hover img, ul#uploadedImages li:hover img, ul#uploadedImages li:hover img, ul#uploadedImages li:hover img {
-      -webkit-box-shadow: 0px 0px 6px 0px rgba(50, 50, 50, 0.75);
-      -moz-box-shadow: 0px 0px 6px 0px rgba(50, 50, 50, 0.75);
-      box-shadow: 0px 0px 6px 0px rgba(50, 50, 50, 0.75); } }
 
 /*# sourceMappingURL=screen.css.map */
