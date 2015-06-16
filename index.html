@@ -4,10 +4,49 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
     <title>Gift Items | Canvas</title>
-    <link rel="shortcut icon" href="img/logo.png">
+    <link rel="shortcut icon" href="assets/img/favicon.png">
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,500,500italic|Open+Sans:400,300,700,600,300italic' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="lib/prod/screen.css?v1.1" />
     <link rel="stylesheet" href="lib/prod/create_fonts.css?v1.1" />
+
+    <!-- load custom fonts -->
+    <script type="text/javascript" src="lib/src/js/webfontloader.js"></script>
+    <script>
+      WebFont.load({
+          custom: {
+            families: ['alex_brushregular', 
+                        'alluraregular', 
+                        'amatic_scregular', 
+                        'caviar_dreamsregular', 
+                        'chunkfiveroman', 
+                        'comic_zine_otregular', 
+                        'quicksandbold', 
+                        'playfair_displayregular', 
+                        'great_vibesregular', 
+                        'seasideresortnfregular' ],
+            urls: [
+                    'http://192.168.0.216/canvas/assets/fonts/alexBrush/stylesheet.css', 
+                    'http://192.168.0.216/canvas/assets/fonts/allura/stylesheet.css', 
+                    'http://192.168.0.216/canvas/assets/fonts/amatic/stylesheet.css', 
+                    'http://192.168.0.216/canvas/assets/fonts/caviar-dreams/stylesheet.css', 
+                    'http://192.168.0.216/canvas/assets/fonts/chunkFive/stylesheet.css', 
+                    'http://192.168.0.216/canvas/assets/fonts/comic-zine/stylesheet.css', 
+                    'http://192.168.0.216/canvas/assets/fonts/quicksand/stylesheet.css', 
+                    'http://192.168.0.216/canvas/assets/fonts/playfair/stylesheet.css',
+                    'http://192.168.0.216/canvas/assets/fonts/great-vibes/stylesheet.css',
+                    'http://192.168.0.216/canvas/assets/fonts/seasideResort/stylesheet.css'
+                    ]
+          }
+      });
+      (function() {
+            var wf = document.createElement('script');
+            wf.src = ('https:' == document.location.protocol ? 'https' : 'http') + '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+            wf.type = 'text/javascript';
+            wf.async = 'true';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(wf, s);
+        })();
+    </script>    
 
     <style>
         select:focus 
@@ -32,9 +71,7 @@
     </header>   
     
     <aside class="clearfix">
- 
         <div id="wrapAssets" class="clearfix"> <!-- scroll -->
-
             <div id="assetsShortcuts" class="clearfix align_lt p_l_top">
                 <h3>Gift Items</h3>
                 <h4>Product Information</h4>
@@ -69,7 +106,6 @@
                     </div>
 
                     <div class="clearfix"></div>
-                    <div class="underline-solid m_l_top"></div>
                    
                     <ul id="orientationLinks">
                         <li>
@@ -118,6 +154,7 @@
             </div>
             
             <div id="assetsImages" class="clearfix">
+
                 <ul id="listImages" class="clearfix relative">
                 </ul>
                 
@@ -127,8 +164,8 @@
                                
                 <div class="clearfix"></div>
                 
-                <div class="quickLinks">
-                    <a href="#" class="clearfix" data-link="Text">
+                <div class="quickLinks m_l_bottom">
+                    <a href="#" class="clearfix" data-link="Artwork">
                         <span class="icon-arrow-down"></span>
                     </a>
                 </div>
@@ -136,24 +173,30 @@
                 <div class="clearfix" style="height:3em;"></div>              
             </div>
 
-            <div id="assetsArtwork" class="clearfix hidden relative">
+            <div id="assetsArtwork" class="clearfix relative">
 
-                <ul id="listThemes" class="clearfix inline">
+                <span class="input_area_select border_ntl round-sd relative _100 clearfix m_l_bottom">
+                    <select id="select-categories" class="_100">
+                        <option>Select Category</option>
+                    </select>
+                    <label class="icon-arrow-down border_box" style="backgroud:#000;z-index:301"></label>
+                </span> 
+
+                <ul id="stockImages" class="clearfix relative">
                 </ul>
-                
+
                 <div class="clearfix m_l_right align_ct pagnation button_wrp m_l_top"></div>
 
                 <div class="clearfix"></div>
                 
-                <div class="quickLinks">
-                    <a href="#" class="clearfix" data-link="Images">
+                <div class="quickLinks m_l_bottom">
+                    <a href="#" class="clearfix" data-link="Text">
                         <span class="icon-arrow-down"></span>
                     </a>
                 </div>
             </div>
             
             <div id="assetsText" class="clearfix">
-
 
                 <div class="m_l_bottom bg_fa clearfix p_l_top p_l_bottom">
                 
@@ -167,7 +210,7 @@
                 
                 </div> 
                 
-                <p class="txt_sm">TEXT STICKERS</p>
+                <p class="txt_sm">ADD SHAPES</p>
                 
                 <ul id="listTextThemes" class="m_l_top relative">
                 </ul>
@@ -175,7 +218,7 @@
                 <div class="clearfix"></div>
                 
                 <div class="quickLinks">
-                    <a href="#" class="clearfix" data-link="Images">
+                    <a href="#" class="clearfix" data-link="Artwork">
                         <span class="icon-arrow-up"></span>
                     </a>
                 </div>
@@ -201,8 +244,7 @@
         <div class="clearfix"></div>
     </aside>
         
-    <main id="main-wrap" class="clearfix">
-    
+    <main id="main-wrap" class="clearfix"> 
         <ul id="tabs" class="m_l_top">
         
             <li class="selected">
@@ -214,33 +256,24 @@
                     </p>
                 </a>
             </li>
-            <li class="themesObj hidden">
-                <a href="#" class="clearfix" data-link="Themes">
-                    <span class="icon-pictures"></span>
-                    <p>THEMES</p>
-                </a>
-            </li>   
             <li>
-                <a href="#" class="clearfix" data-link="Images">
+                <a id="tab-yourPhotos" href="#" class="clearfix" data-link="Images">
                     <span class="icon-camera2"></span>
-                    <p>PHOTOS</p>
+                    <p>YOUR PHOTOS</p>
                 </a>
             </li>                                           
-            
+            <li>
+                <a href="#" class="clearfix" data-link="Artwork">
+                    <span class="icon-pictures"></span>
+                    <p>ARTWORK</p>
+                </a>
+            </li>             
             <li>
                 <a href="#" class="clearfix" data-link="Text">
                     <span class="icon-pilcrow"></span>
                     <p>ADD TEXT</p>
                 </a>
             </li>       
-            <!--                                
-            <li>
-                <a href="#" class="clearfix" data-link="Size">
-                    <span class="icon-crop top txt_md"></span>
-                    <p>Size</p>
-                </a>
-            </li>   
-            -->
             <li>
                 <a href="#"></a>
             </li>          
@@ -263,8 +296,8 @@
       
         <ul id="palette" class="hidden top_max">
         
-            <li id="filter">
-                <a href="#">
+            <li>
+                <a href="#" id="filter">
                     Filter
                     <span class="icon-arrow-down2 m_m_left"></span>
                 </a>
@@ -282,20 +315,18 @@
                         <span>Colour</span>
                     </li>
                 </ul>
-            </li>
-                    
-            <li id="colourPalette">
-                <a href="#">
+            </li>             
+            <li>
+                <a href="#"  id="colourPalette">
                     Colour
                     <span class="icon-arrow-down2 m_m_left"></span>
                 </a>
                 <ul id="colourContainer">
                 </ul>
             </li>
-            
-            <li id="textStyle">
-                <a href="#">
-                    Style
+            <li>
+                <a href="#" id="textStyle">
+                    Text Style
                     <span class="icon-arrow-down2 m_m_left"></span>
                 </a>
                 <ul id="textStyleContainer" class="p_m_top">
@@ -303,9 +334,20 @@
                         <span class="input_area_select border_ntl round_sd relative inline_block">
                             <select id="fontFamily" style="width:16em">
                                 <option style="font-family:Verdana, Geneva, sans-serif" value="Verdana, Geneva, sans-serif">Verdana</option>
-                                <option style="font-family:Arial, Helvetica, sans-serif" value="Arial, Helvetica, sans-serif">Arial</option>        <!-- Palatino Linotype, Book Antiqua3, Palatino, serif -->
+                                <option style="font-family:Arial, Helvetica, sans-serif" value="Arial, Helvetica, sans-serif">Arial</option>  
                                 <option style="font-family:'Georgia, serif" value="Georgia, serif">Georgia</option>
                                 <option style="font-family:'Tahoma, Geneva, sans-serif" value="Tahoma, Geneva, sans-serif">Tahoma</option>
+                                <!-- customer fonts -->
+                                <option style="font-family:alex_brushregular" value="alex_brushregular">Alex Brush</option>
+                                <option style="font-family:alluraregular" value="alluraregular">Allura</option>
+                                <option style="font-family:amatic_scregular" value="amatic_scregular">Amatic</option>
+                                <option style="font-family:caviar_dreamsregular" value="caviar_dreamsregular">Caviar Dreams</option>
+                                <option style="font-family:chunkfiveroman" value="chunkfiveroman">chunkfiveroman</option>
+                                <option style="font-family:comic_zine_otregular" value="comic_zine_otregular">Comic Zine</option>
+                                <option style="font-family:quicksandbold" value="quicksandbold">Quicksand</option>
+                                <option style="font-family:playfair_displayregular" value="playfair_displayregular">Play Fair</option>
+                                <option style="font-family:great_vibesregular" value="great_vibesregular">Great Vibes</option>
+                                <option style="font-family:seasideresortnfregular" value="seasideresortnfregular">Seaside Eatery</option>
                             </select>
                             <label class="icon-arrow-down2 border_box" style="color:#333"></label>
                         </span>
@@ -336,11 +378,11 @@
                 </ul>
             </li>       
                 
-            <li id="back">Back</li>
-            <li id="forward">Forward</li>
-            <li id="grow"><span class="icon-plus"></span></li>
-            <li id="shrink"><span class="icon-minus"></span></li>
-            <li id="trash"><span class="icon-trash"></span></li>            
+            <li><a href="#" id="back">Back</a></li>
+            <li><a href="#" id="forward">Forward</a></li>
+            <li><a href="#" id="grow"><span class="icon-plus"></span></a></li>
+            <li><a href="#" id="shrink"><span class="icon-minus"></span></a></li>
+            <li><a href="#" id="trash"><span class="icon-trash"></span></a></li>            
         </ul>
         
         <div id="canvas-loader">
@@ -428,7 +470,7 @@
         cropMarks = [],
         currentPageRef = '0',
         todaysDate = '', 
-        userId, id1, id2, id3, firstName, lastName, firstPortraitImgPath, firstGroupImgPath, firstFamilyImgPath, logoPath;
+        userId, id1, id2, id3, firstName, lastName, firstPortraitImgPath, firstGroupImgPath, firstFamilyImgPath, logoPath, cartType;
 </script>
 
 <script type="text/javascript">
@@ -458,17 +500,16 @@ $(function()
                     'id1': id1,
                     'id2': id2,
                     'id3': id3,
-                    'firstName': firstName,
-                    'lastName': lastName
+                    'firstName': firstName.replace('%20',' '),
+                    'lastName': lastName.replace('%20',' ')
                 };
 
     $('#wrapAssets').css('height', window.innerHeight - ($('header').height()+60) + 'px');  // removed $('#wrapSearch').height()*3)
     $('main').css('height', window.innerHeight - ($('header').height()+10) + 'px');
     $('aside').css('height', window.innerHeight - ($('header').height()+10) + 'px');
-    console.log('sizes set ');
-
 
     appInitialise = new AppInit(userInfo, website, type, productId, layoutId, jsonId);
+
 });
 
 </script>

@@ -117,6 +117,11 @@ ul#listImages, ul#stockImages, ul#listTextThemes, ul#listThemes, ul#uploadedImag
 		height:auto;
 	};
 }
+/* MAKE OFF WHITE COLOUR FOR WHITE PNG'S */
+ul#stockImages li a img 
+{
+	background: #f9f9f9;
+}
 
 .img-col-50 
 {

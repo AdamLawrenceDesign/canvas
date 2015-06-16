@@ -247,7 +247,7 @@ button::-moz-focus-inner, select::-moz-focus-inner
 		width:100%;
 		opacity:0;
 		cursor: pointer;
-		height:2.5em;
+		height:3em;
 	};
 	#upload-display
 	{
@@ -260,6 +260,8 @@ button::-moz-focus-inner, select::-moz-focus-inner
 		text-indent:.5em;
 		width: 76%;
 		background:#e1e4e7;
+		height:2em;
+
 	};
 	#upload-button
 	{
@@ -272,6 +274,8 @@ button::-moz-focus-inner, select::-moz-focus-inner
 		width: 25%;
 		backround:$blue;
 		border:1px solid $blue;
+		font-size: .8em;
+		padding: .6em; 
 	};
 };
 
