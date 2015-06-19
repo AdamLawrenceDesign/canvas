@@ -8,7 +8,6 @@
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,500,500italic|Open+Sans:400,300,700,600,300italic' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="lib/prod/screen.css?v1.1" />
     <link rel="stylesheet" href="lib/prod/create_fonts.css?v1.1" />
-
     <!-- load custom fonts -->
     <script type="text/javascript" src="lib/src/js/webfontloader.js"></script>
     <script>
@@ -22,7 +21,6 @@
                         'comic_zine_otregular', 
                         'quicksandbold', 
                         'playfair_displayregular', 
-                        'great_vibesregular', 
                         'seasideresortnfregular' ],
             urls: [
                     'http://192.168.0.216/canvas/assets/fonts/alexBrush/stylesheet.css', 
@@ -33,7 +31,6 @@
                     'http://192.168.0.216/canvas/assets/fonts/comic-zine/stylesheet.css', 
                     'http://192.168.0.216/canvas/assets/fonts/quicksand/stylesheet.css', 
                     'http://192.168.0.216/canvas/assets/fonts/playfair/stylesheet.css',
-                    'http://192.168.0.216/canvas/assets/fonts/great-vibes/stylesheet.css',
                     'http://192.168.0.216/canvas/assets/fonts/seasideResort/stylesheet.css'
                     ]
           }
@@ -47,13 +44,6 @@
             s.parentNode.insertBefore(wf, s);
         })();
     </script>    
-
-    <style>
-        select:focus 
-        {
-            background: #f9f9f9;
-        }
-    </style>
 
 </head>
 
@@ -72,6 +62,7 @@
     
     <aside class="clearfix">
         <div id="wrapAssets" class="clearfix"> <!-- scroll -->
+
             <div id="assetsShortcuts" class="clearfix align_lt p_l_top">
                 <h3>Gift Items</h3>
                 <h4>Product Information</h4>
@@ -157,10 +148,6 @@
 
                 <ul id="listImages" class="clearfix relative">
                 </ul>
-                
-                <div class="clearfix"></div>
-                
-                <!-- <div class="underline-arrow m_l_top m_l_bottom"></div> -->
                                
                 <div class="clearfix"></div>
                 
@@ -198,16 +185,20 @@
             
             <div id="assetsText" class="clearfix">
 
-                <div class="m_l_bottom bg_fa clearfix p_l_top p_l_bottom">
+                <div id="wrapTextTheme" class="m_l_bottom bg_fa clearfix p_l_top p_l_bottom relative">
                 
                     <a id="addText" class="ease-sd"></a>
                     
                     <div class="clearfix" style="height:1em"></div>
                     
-                    <a id="changeTextTheme" href="#" class="txt_xs button p_m _100 m_l_top"><b>NEW OPTION</b></a>
+                    <a id="changeTextTheme" href="#" class="txt_xs button p_m m_l_top round-sd" style="display:inline-block">NEW OPTION</a>
                     
                     <div class="clearfix"></div>
-                
+
+                    <div class="loading" style="display:none">
+                        <span></span>
+                    </div>                
+
                 </div> 
                 
                 <p class="txt_sm">ADD SHAPES</p>
@@ -223,18 +214,7 @@
                     </a>
                 </div>
             </div>
-            <!--
-            <div id="assetsSize" class="clearfix">
-
-                <ul id="listSize" class="thirds inline">
-                </ul>
-                
-                <div class="clearfix"></div>
-                
-                <div class="underline-arrow m_l_top"></div>
-
-            </div>
-            -->
+        
         </div>
         
         <div id="aside-loader">
@@ -245,6 +225,7 @@
     </aside>
         
     <main id="main-wrap" class="clearfix"> 
+
         <ul id="tabs" class="m_l_top">
         
             <li class="selected">
@@ -282,20 +263,13 @@
         <ul id="nav-pages" class="m_l_top hidden">
         </ul>                                                               
 
-        <div id="zoom" class="hidden">
-            <a id="rotate" href="#">
-                <span class="txt_sm">ORIENTATION</span><span class="icon-spinner m_l_left"></span>
+        <div id="zoom">
+            <a id="revert" href="#">
+                <span class="txt_sm">REVERT</span><span class="icon-spinner m_l_left"></span>
             </a> 
-            
-            <span class="m_l_left m_l_right">|</span>
-            
-            <a id="canvasSmaller" href="#"><span class="icon-zoomout m_l_right"></span></a>
-            <span class="txt_sm">VIEW</span>
-            <a id="canvasLarger" href="#"><span class="icon-zoomin m_l_left"></span></a>
         </div>
       
         <ul id="palette" class="hidden top_max">
-        
             <li>
                 <a href="#" id="filter">
                     Filter
@@ -333,11 +307,11 @@
                     <li>
                         <span class="input_area_select border_ntl round_sd relative inline_block">
                             <select id="fontFamily" style="width:16em">
+                                <option>Select Font</option>
                                 <option style="font-family:Verdana, Geneva, sans-serif" value="Verdana, Geneva, sans-serif">Verdana</option>
                                 <option style="font-family:Arial, Helvetica, sans-serif" value="Arial, Helvetica, sans-serif">Arial</option>  
                                 <option style="font-family:'Georgia, serif" value="Georgia, serif">Georgia</option>
                                 <option style="font-family:'Tahoma, Geneva, sans-serif" value="Tahoma, Geneva, sans-serif">Tahoma</option>
-                                <!-- customer fonts -->
                                 <option style="font-family:alex_brushregular" value="alex_brushregular">Alex Brush</option>
                                 <option style="font-family:alluraregular" value="alluraregular">Allura</option>
                                 <option style="font-family:amatic_scregular" value="amatic_scregular">Amatic</option>
@@ -346,8 +320,7 @@
                                 <option style="font-family:comic_zine_otregular" value="comic_zine_otregular">Comic Zine</option>
                                 <option style="font-family:quicksandbold" value="quicksandbold">Quicksand</option>
                                 <option style="font-family:playfair_displayregular" value="playfair_displayregular">Play Fair</option>
-                                <option style="font-family:great_vibesregular" value="great_vibesregular">Great Vibes</option>
-                                <option style="font-family:seasideresortnfregular" value="seasideresortnfregular">Seaside Eatery</option>
+                                <option style="font-family:seasideresortnfregular" value="seasideresortnfregular">Seaside Resort</option>
                             </select>
                             <label class="icon-arrow-down2 border_box" style="color:#333"></label>
                         </span>
@@ -416,22 +389,7 @@
             <div class="p_m align_ct">
                 <button class="button round-sd txt_sm back" style="background:#ffa45a;display:inline-block">BACK</button>
             </div>     
-            <!-- 
-            <div class="p_m _50_s">
-                <button id="warning-cancel" class="button round-sd txt_sm fl_rt" style="background:#ffa45a">CANCEL</button>
-            </div>            
-            <div class="p_m _50_s">
-                <button id="warning-proceed"  class="button round-sd txt_sm fl_lt">PROCEED</button>
-            </div>
-            -->
         </div>
-    </div>
-
-    <div class="hidden">
-        <div id="testing_phone"></div>
-        <div id="testing_tablet"></div>
-        <div id="testing_desktop"></div>
-        <div id="testing_desktop_lg"></div>
     </div>
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js" type="text/javascript"></script>
@@ -443,6 +401,7 @@
 <script type="text/javascript" src="lib/src/js/masonry.pkgd.min.js"></script>
 <script type="text/javascript" src="lib/src/js/image-preloader.js"></script>
 <script type="text/javascript" src="lib/src/js/server-query.js"></script>
+<script type="text/javascript" src="lib/src/js/canvas-save.js"></script>
 <script type="text/javascript" src="lib/src/js/page-style.js"></script>
 <script type="text/javascript" src="lib/src/js/image-upload.js"></script>
 <script type="text/javascript" src="lib/src/js/pagnation.js"></script>
@@ -453,7 +412,7 @@
 <script type="text/javascript" src="lib/src/js/export-json.js"></script>
 <script type="text/javascript" src="lib/src/js/rotate-canvas.js"></script>
 <script type="text/javascript" src="lib/src/js/palette-manager.js"></script>
-<script type="text/javascript" src="lib/src/js/canvas-add-images.js"></script>
+<script type="text/javascript" src="lib/src/js/canvas-add-images.js"></script>  
 <script type="text/javascript" src="lib/src/js/canvas-add-textItems.js"></script>
 <script type="text/javascript" src="lib/src/js/load-assets.js"></script>
 <script type="text/javascript" src="lib/src/js/canvas-grid.js"></script>

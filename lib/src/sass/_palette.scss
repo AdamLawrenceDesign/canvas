@@ -86,20 +86,20 @@
 	}
 	#colourContainer
 	{
-		padding:.75em !important;
+		width:10em;
 		li
 		{
 			width:4em;
 			height:4em;
+			padding:.5em;
 			-webkit-border-radius: 2em;
 			-moz-border-radius: 2em;
 			border-radius: 2em;
 			display:inline-block;
-			margin-bottom:1em;
-			span
+			a
 			{
-				height:4em;
-				width:4em;
+				height:3em;
+				width:3em;
 				display:block;
 				-webkit-border-radius: 2em;
 				-moz-border-radius: 2em;
@@ -123,4 +123,21 @@
   transform: scale(0.00);
   width: 0;
   height: 0;
+}
+
+/* LIGHT BLUE 1100px  */
+
+@media only screen and (min-width : 68.75em){																
+
+	#palette
+	{
+		right: 1em;
+		top: 1em;
+	}
+
+	ul#tabs, ul#nav-pages
+	{
+		font-size:1.1em;
+	}
+
 }

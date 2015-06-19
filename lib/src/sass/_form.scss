@@ -186,18 +186,11 @@ textarea
 .button_dk, .button_sd, .button
 {
 	color:#fff;
-	background:rgb(255,187,0); 	/* yellow */
-	background:#4bc9bd;
-	background:#ffa45a;			 		/* orange */
 	background:#00B3C8;
 }
 
 .button_lt:hover, .button:hover
 {
-	/*background:#73b64a;*/
-	/* background:#6caddf; */		/* blue */
-	/* background:#30BFB1;
-	background:#4BC3C9; */
 	-webkit-box-shadow: inset 9px 11px 16px -14px rgba(0,0,0,0.75);
 	-moz-box-shadow: inset 9px 11px 16px -14px rgba(0,0,0,0.75);
 	box-shadow: inset 9px 11px 16px -14px rgba(0,0,0,0.75);
@@ -284,15 +277,22 @@ button::-moz-focus-inner, select::-moz-focus-inner
 	background:$orange;
 }
 
-
-
-
-/*
-.btn-orange:hover
+#changeTextTheme 
 {
-	background: #ef842d;
+	width:auto !important;
 }
-*/
+
+#changeTextTheme:hover
+{
+	color:#fff;
+}
+
+
+select:focus 
+{
+    background: #f9f9f9;
+}
+
 @media only screen and (min-width : 20em) {						/* ===== 20em (320px) Red ====== */
 }
 
