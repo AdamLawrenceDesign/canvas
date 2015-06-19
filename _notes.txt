@@ -1,12 +1,37 @@
 
+
+WORKING JS FILES 
+
+<script type="text/javascript" src="lib/src/js/slimScroll.js"></script>
+<script type="text/javascript" src="lib/src/js/masonry.pkgd.min.js"></script>
+<script type="text/javascript" src="lib/src/js/image-preloader.js"></script>
+<script type="text/javascript" src="lib/src/js/server-query.js"></script>
+<script type="text/javascript" src="lib/src/js/canvas-save.js"></script>
+<script type="text/javascript" src="lib/src/js/page-style.js"></script>
+<script type="text/javascript" src="lib/src/js/image-upload.js"></script>
+<script type="text/javascript" src="lib/src/js/pagnation.js"></script>
+<script type="text/javascript" src="lib/src/js/list-builder.js"></script>
+<script type="text/javascript" src="lib/src/js/element-builder.js"></script>
+<script type="text/javascript" src="lib/src/js/scroll-manager.js"></script>
+<script type="text/javascript" src="lib/src/js/export-json.js"></script>
+<script type="text/javascript" src="lib/src/js/rotate-canvas.js"></script>
+<script type="text/javascript" src="lib/src/js/palette-manager.js"></script>
+<script type="text/javascript" src="lib/src/js/canvas-add-images.js"></script>  
+<script type="text/javascript" src="lib/src/js/canvas-add-textItems.js"></script>
+<script type="text/javascript" src="lib/src/js/load-assets.js"></script>
+<script type="text/javascript" src="lib/src/js/canvas-grid.js"></script>
+<script type="text/javascript" src="lib/src/js/event-manager.js"></script>
+<script type="text/javascript" src="lib/src/js/insert-json.js"></script>
+<script type="text/javascript" src="lib/src/js/search-and-replace.js"></script>
+<script type="text/javascript" src="lib/src/js/canvas-setup.js"></script>
+<script type="text/javascript" src="lib/src/js/app-init.js"></script>
+
+
 /***********************//
 
 	GRUNT 
 
 1. 	
-
-
-
 
 //**********************//
 
